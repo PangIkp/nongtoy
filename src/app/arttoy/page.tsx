@@ -2,7 +2,7 @@ import React from 'react';
 import Navbar from '@/components/Navbar';
 import Header from '@/components/Header';
 
-function Toymatch() {
+function Arttoy() {
   return (
     <div>
       <Header/>
@@ -11,4 +11,4 @@ function Toymatch() {
   );
 }
 
-export default Toymatch;
+export default Arttoy;

@@ -15,7 +15,7 @@ $hover-color: #2980b9;
   background-color: $primary-color;
   display: flex;
   align-items: center;
-  height: 40px; 
+  height: 40px;
   padding: 10px;
   padding-left: 50px;
   padding-right: 50px;
@@ -23,16 +23,12 @@ $hover-color: #2980b9;
 }
 
 .header a {
-    font-size: 14px ;  // กำหนดขนาดฟอนต์ 20px
-    font-weight: 600; 
-    color: white;  
-    margin-right: 10;
-} 
-
-.header img {
-    width: 14px;
-
+  font-size: 14px; // กำหนดขนาดฟอนต์ 20px
+  font-weight: 600;
+  color: white;
+  margin-right: 10;
 }
 
-
-  
+.header img {
+  width: 14px;
+}
