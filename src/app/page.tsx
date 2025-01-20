@@ -1,9 +1,13 @@
-import React from 'react'
+import React from 'react';
+import Navbar from '@/components/Navbar';
 
-function page() {
+function Page() {
   return (
-    <div>page</div>
-  )
+    <div>
+      <Navbar />  {/* เรียกใช้ Navbar ในหน้าของคุณ */}
+      <div>Page Content</div>
+    </div>
+  );
 }
 
-export default page
+export default Page;
