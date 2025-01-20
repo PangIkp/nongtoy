@@ -1,14 +1,13 @@
-"use client";
+"use client"
 import React, { useState } from "react";
 import "../Styles/Navbar.scss";
 import Link from "next/link";
-
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+    setIsMenuOpen(!isMenuOpen); // สลับสถานะเมนู
   };
 
   return (
@@ -17,7 +16,8 @@ const Navbar = () => {
         <img src="/Images/Logo.png" alt="Logo" className="Logo" />
       </div>
 
-      <div className="nav-links">
+      {/* เมนูหลัก (แสดงใน desktop) */}
+      <div className={`nav-links ${isMenuOpen ? "active" : ""}`}>
         <a href="/toymatch">Toy Match</a>
         <a href="/arttoy">Art Toy</a>
         <a href="/community">Community</a>
@@ -45,9 +45,21 @@ const Navbar = () => {
           <p className="gradient-button">Login</p>
         </Link>
       </div>
-    </div>
 
-    
+      {/* Hamburger menu */}
+      <div className="bars" onClick={toggleMenu}>
+        <div className="bar"></div>
+        <div className="bar"></div>
+        <div className="bar"></div>
+      </div>
+
+      {/* เมนู sidebar */}
+      <div className={`mobile-menu ${isMenuOpen ? "active" : ""}`}>
+        <a href="/toymatch">Toy Match</a>
+        <a href="/arttoy">Art Toy</a>
+        <a href="/community">Community</a>
+      </div>
+    </div>
   );
 };
 
