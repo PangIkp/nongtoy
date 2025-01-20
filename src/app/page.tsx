@@ -1,11 +1,12 @@
 import React from 'react';
 import Navbar from '@/components/Navbar';
+import Header from '@/components/Header';
 
 function Page() {
   return (
     <div>
-      <Navbar />  {/* เรียกใช้ Navbar ในหน้าของคุณ */}
-      <div>Page Content</div>
+      <Header/>
+      <Navbar/>
     </div>
   );
 }
