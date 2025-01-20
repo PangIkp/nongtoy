@@ -1,60 +1,60 @@
-/* navbar.scss */
+// /* navbar.scss */
 
-$primary-color: #0096C7;  // กำหนดสีหลัก
-$hover-color: #2980b9;    // กำหนดสีสำหรับเมื่อเมาส์ชี้
+// $primary-color: #0096C7;  // กำหนดสีหลัก
+// $hover-color: #2980b9;    // กำหนดสีสำหรับเมื่อเมาส์ชี้
 
-.navbar {
-  background-color: $primary-color;
-  padding: 10px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+// .navbar {
+//   background-color: $primary-color;
+//   padding: 10px 20px;
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+// }
 
-.navbar .logo {
-  font-size: 24px;
-  color: white;
-  text-decoration: none;
-}
+// .navbar .logo {
+//   font-size: 24px;
+//   color: white;
+//   text-decoration: none;
+// }
 
-.navbar .nav-links {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  gap: 20px;
-}
+// .navbar .nav-links {
+//   list-style: none;
+//   margin: 0;
+//   padding: 0;
+//   display: flex;
+//   gap: 20px;
+// }
 
-.navbar .nav-links li {
-  display: inline;
-}
+// .navbar .nav-links li {
+//   display: inline;
+// }
 
-.navbar .nav-links a {
-  text-decoration: none;
-  color: white;
-  font-size: 18px;
-  transition: color 0.3s ease;
-}
+// .navbar .nav-links a {
+//   text-decoration: none;
+//   color: white;
+//   font-size: 18px;
+//   transition: color 0.3s ease;
+// }
 
-.navbar .nav-links a:hover {
-  color: $hover-color;
-}
+// .navbar .nav-links a:hover {
+//   color: $hover-color;
+// }
 
-/* เพิ่ม media query สำหรับ responsive navbar */
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+// /* เพิ่ม media query สำหรับ responsive navbar */
+// @media (max-width: 768px) {
+//   .navbar {
+//     flex-direction: column;
+//     align-items: flex-start;
+//   }
 
-  .navbar .nav-links {
-    width: 100%;
-    display: block;
-  }
+//   .navbar .nav-links {
+//     width: 100%;
+//     display: block;
+//   }
 
-  .navbar .nav-links a {
-    padding: 10px 0;
-    width: 100%;
-    text-align: left;
-  }
-}
+//   .navbar .nav-links a {
+//     padding: 10px 0;
+//     width: 100%;
+//     text-align: left;
+//   }
+// }

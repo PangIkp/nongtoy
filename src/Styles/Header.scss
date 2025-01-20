@@ -1,0 +1,38 @@
+* {
+  box-sizing: border-box; // ตั้งค่า box-sizing ให้กับทุก element
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%; // ให้ความสูงเป็น 100% ของหน้าจอ
+}
+
+$primary-color: #0096c7; // กำหนดสีหลัก
+$hover-color: #2980b9;
+
+.header {
+  background-color: $primary-color;
+  display: flex;
+  align-items: center;
+  height: 40px; 
+  padding: 10px;
+  padding-left: 50px;
+  padding-right: 50px;
+  gap: 10px;
+}
+
+.header a {
+    font-size: 14px ;  // กำหนดขนาดฟอนต์ 20px
+    font-weight: 600; 
+    color: white;  
+    margin-right: 10;
+} 
+
+.header img {
+    width: 14px;
+
+}
+
+
+  
