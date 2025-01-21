@@ -23,13 +23,14 @@ $hover-color: #0096c7; // กำหนดสีสำหรับเมื่อ
     padding: 0;
     display: flex;
     gap: 60px;
+    font-size: 14px;
 
     @media (max-width: 700px) {
       display: none; // ซ่อนเมนูหลักในมือถือ
     }
 
     @media (max-width: 1200px) {
-      font-size: 10px;
+      font-size: 14px;
       gap: 50px;
     }
 
@@ -48,7 +49,7 @@ $hover-color: #0096c7; // กำหนดสีสำหรับเมื่อ
     text-decoration: none;
     color: black;
     font-weight: 500;
-    font-size: 13px;
+    font-size: 16px;
     transition: color 0.3s ease;
 
     @media (max-width: 1200px) {
@@ -109,7 +110,7 @@ $hover-color: #0096c7; // กำหนดสีสำหรับเมื่อ
 
     a {
       padding: 10px;
-      font-size: 12px;
+      font-size: 13px;
       text-align: left;
       display: block;
       color: black;
@@ -165,7 +166,7 @@ $hover-color: #0096c7; // กำหนดสีสำหรับเมื่อ
 }
 
 .Logo {
-  width: 180px;
+  width: 250px;
   transition: width 0.1s ease;
 
   @media (max-width: 1300px) {
@@ -186,7 +187,7 @@ $hover-color: #0096c7; // กำหนดสีสำหรับเมื่อ
 }
 
 .Favorite {
-  width: 22px;
+  width: 28px;
   @media (max-width: 770px) {
     display: none; // ซ่อนเมนูหลักในมือถือ
   }
@@ -205,7 +206,7 @@ $hover-color: #0096c7; // กำหนดสีสำหรับเมื่อ
 }
 
 .Cart {
-  width: 20px;
+  width: 26px;
   @media (max-width: 770px) {
     display: none; // ซ่อนเมนูหลักในมือถือ
   }
@@ -216,7 +217,7 @@ $hover-color: #0096c7; // กำหนดสีสำหรับเมื่อ
 
   @media (max-width: 900px) {
     width: 16px;
-  }
+  } 
 
   @media (max-width: 750px) {
     width: 14px;
@@ -233,40 +234,31 @@ $hover-color: #0096c7; // กำหนดสีสำหรับเมื่อ
   padding: 10px 20px;
   border: 1px solid #ddd;
   border-radius: 100px;
-  font-size: 13px;
+  font-size: 16px;
   outline: none;
-  width: 100%; // ค่าเริ่มต้นเต็มความกว้างของ container
-  max-width: 300px; // ความกว้างสูงสุดเริ่มต้นสำหรับหน้าจอขนาดเล็ก
-  min-width: 200px;
+  width: 700px;
 
   &::placeholder {
     color: #9f9f9f;
   }
 
-  // ขนาดหน้าจอเดสก์ท็อปใหญ่
-  @media (min-width: 1248px) {
-    width: 500;
-    max-width: 600px;
-    font-size: 13px;
+  @media (max-width: 1665px) {
+    width: 400px;
+    font-size: 14px;
   }
 
-  @media (min-width: 970px) {
-    width: 300;
-    max-width: 600px;
-    font-size: 13px;
-  }
-
-  // ขนาดหน้าจอแท็บเล็ต
-  @media (min-width: 768px) and (max-width: 899px) {
-    width: 90%;
-    max-width: 400px;
+  @media (max-width: 1060px) {
+    width: 300px;
     font-size: 12px;
   }
 
-  // ขนาดหน้าจอมือถือ
-  @media (max-width: 767px) {
-    width: 95%;
-    max-width: 600px;
+  @media (max-width: 950px) {
+    width: 200px;
+    font-size: 10px;
+  }
+
+  @media (max-width: 750px) {
+    width: 140px;
     font-size: 10px;
   }
 }
@@ -280,7 +272,7 @@ $hover-color: #0096c7; // กำหนดสีสำหรับเมื่อ
   padding: 8px 20px;
   background: linear-gradient(45deg, #023e8a, #0077b6);
   color: white;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: bold;
   text-align: center;
   border-radius: 100px;
@@ -317,4 +309,24 @@ $hover-color: #0096c7; // กำหนดสีสำหรับเมื่อ
   width: 20px;
   height: 20px;
   pointer-events: none;
+
+  @media (max-width: 1530px) {
+    width: 18px;
+    height: 18px;
+  }
+
+  @media (max-width: 1060px) {
+    width: 16px;
+    height: 16px;
+  }
+
+  @media (max-width: 950px) {
+    width: 14px;
+    height: 14px;
+  }
+
+  @media (max-width: 750px) {
+    width: 12px;
+    height: 12px;
+  }
 }
