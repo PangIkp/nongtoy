@@ -1,21 +1,21 @@
 import React from "react";
 import "../Styles/Footer.scss";
 
-
 const Footer = () => {
     return (
         <div className="footer">
-
             <section className="footer-content">
                 <section className="contact-info">
                     <div className="contact">
                         <img src="Images/Map.png" alt="https://citly.me/vNcdK" />
-                        <a href="" target="_blank" >21 ladprao Street Bangkok, Thailand</a>
+                        <a href="" target="_blank">
+                            21 ladprao Street Bangkok, Thailand
+                        </a>
                     </div>
 
                     <div className="contact">
                         <img src="Images/Phone.png" alt="" />
-                        <a href="tel:090-846-6758">090-846-6758</a>
+                        <a href="tel:123-456-7890">123-456-7890</a>
                     </div>
                     <div className="contact">
                         <img src="Images/Email.png" alt="" />
@@ -25,7 +25,12 @@ const Footer = () => {
 
                 <section className="about">
                     <p className="text1">About the company</p>
-                    <p className="text2">NongToy is your go-to platform for discovering unique art toys and collectibles. We bring together a diverse range of designs from top brands and talented creators, offering a personalized and engaging experience for collectors and enthusiasts alike.</p>
+                    <p className="text2">
+                        NongToy is your go-to platform for discovering unique art toys and
+                        collectibles. We bring together a diverse range of designs from top
+                        brands and talented creators, offering a personalized and engaging
+                        experience for collectors and enthusiasts alike.
+                    </p>
                     <p className="social">
                         <img src="Images/Facebook.png" alt="" />
                         <img src="Images/Instagram.png" alt="" />
