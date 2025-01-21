@@ -1,74 +1,117 @@
-.product-card {
+.brand {
+    margin-top:20px;
+    display: flex;
+    flex-wrap: wrap; /* ให้ไอเท็มในคอนเทนเนอร์มาอยู่ในหลายแถว */
+    gap: 20px; /* ระยะห่างระหว่างไอเท็ม */
+    
+    a {
+      flex: 1 1 calc(50% - 10px); /* กำหนดให้แต่ละลิงก์ (หรือแต่ละคอลัมน์) ขนาด 50% ของคอนเทนเนอร์ โดยเหลือพื้นที่ 10px สำหรับระยะห่าง */
+      display: block; /* ทำให้ <a> มีขนาดเต็มที่ */
+      text-align: center; /* จัดข้อความให้อยู่กลาง */
+    }
+    
+    img {
+      width: 100%; /* ปรับให้ขนาดภาพเต็มขนาดของคอลัมน์ */
+      height: auto; /* ปรับให้ภาพรักษาสัดส่วน */
+    }
+    
+    @media (max-width: 768px) {
+      a {
+        flex: 1 1 100%; /* เมื่อหน้าจอเล็กลง ให้ไอเท็มทั้งหมดใช้ความกว้างเต็มแถว */
+      }
+    }
+  }
+  
+.product-container {
+    display: flex;
+    justify-content: space-between; /* จัด card ให้มีช่องว่างระหว่างกัน */
+    gap: 80px; /* ระยะห่างระหว่าง card */
+    padding-top: 20px; /* เพิ่มระยะขอบใน container */
+    flex-wrap: nowrap; /* ห้าม card ขึ้นแถวใหม่ */
+    padding-bottom: 20px;
+  }
+  
+  .product-card {
     display: flex;
     flex-direction: column;
     background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     width: 300px;
-    margin: 20px;
+    height: 380px; /* ขนาดเริ่มต้นของ card */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    @media (max-width: 1600px) {
+        height: 320px;
+        width: 220px; // ปรับขนาดโลโก้ให้เล็กลงสำหรับหน้าจอแท็บเล็ต
+      }
+    
+      @media (max-width: 1500px) {
+        height: 300px; // ปรับขนาดโลโก้ให้เล็กลงสำหรับหน้าจอแท็บเล็ต
+        width: 180px;
+      }
+    
+      @media (max-width: 500px) {
+        height  : 80px; // ปรับขนาดโลโก้ให้เล็กลงสำหรับหน้าจอมือถือ
+      }
   
-    &:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    }
-  
-    &__image {
+    .product-card_image {
       width: 100%;
-      height: 200px;
+      height: 100%;/* ความสูงเริ่มต้น */
+      border-radius: 20px;
       overflow: hidden;
   
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.3s ease;
-      }
-  
-      &:hover img {
-        transform: scale(1.1);
-      }
+    }
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
     }
   
-    &__details {
-      padding: 16px;
+    .product-card_image:hover img {
+      transform: scale(1.1);
+    }
   
-      .product-card__name {
+    .product-card_details {
+      .product-card_name {
         font-size: 15px;
         font-weight: 500;
+        margin-bottom: 8px;
         color: black;
-        margin: 10px 0;
+        padding-left: 5px;
       }
   
-      .product-card__description {
-        font-size: 0.9rem;
-        color: #777;
-        margin-bottom: 10px;
-      }
-  
-      .product-card__price {
-        font-size: 1.1rem;
+      .product-card_brand {
+        font-size: 14px;
         font-weight: bold;
-        color: #e74c3c;
-        margin-bottom: 15px;
+        color: #023e8a;
       }
   
-      .product-card__add-to-cart {
-        width: 100%;
-        padding: 12px;
-        font-size: 1rem;
-        background-color: #3498db;
-        color: #fff;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
+      .product-card_qty {
+        background-color: #eed00f;
+        color: black;
+        padding: 1px 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        font-weight: 400;
+        font-size: 11px;
+      }
   
-        &:hover {
-          background-color: #2980b9;
-        }
+      .product-card_price {
+        font-size: 18px;
+        font-weight: 600;
+        color: black;
+        padding-left: 5px;
+      }
+  
+      .layout {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 10px;
+        margin-bottom: 8px;
+        padding-left: 5px;
       }
     }
   }

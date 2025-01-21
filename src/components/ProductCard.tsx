@@ -5,29 +5,30 @@ interface ProductCardProps {
   productName: string;
   productPrice: string;
   productImage: string;
-  productDescription: string;
-//   onAddToCart: () => void;
+  productBrand: string;
+  productQty: string;
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({
   productName,
   productPrice,
   productImage,
-  productDescription,
-//   onAddToCart,
+  productQty,
+  productBrand,
+  //   onAddToCart,
 }) => {
   return (
     <div className="product-card">
-      <div className="product-card__image">
+      <div className="product-card_image">
         <img src={productImage} alt={productName} />
       </div>
-      <div className="product-card__details">
-        <h2 className="product-card__name">{productName}</h2>
-        <p className="product-card__description">{productDescription}</p>
-        <p className="product-card__price">{productPrice}</p>
-        <button className="product-card__add-to-cart">
-          Add to Cart
-        </button>
+      <div className="product-card_details">
+        <div className="layout">
+          <p className="product-card_brand">{productBrand}</p>
+          <p className="product-card_qty">{productQty}</p>
+        </div>
+        <h2 className="product-card_name">{productName}</h2>
+        <p className="product-card_price">{productPrice}</p>
       </div>
     </div>
   );
