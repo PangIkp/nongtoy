@@ -5,11 +5,11 @@
 }
 
 .footer {
-    background-color: #333;
+    background-color: #323232;
     color: white;
     text-align: left;
     padding-bottom: 50px;
-    position: fixed;
+    overflow: hidden;
     bottom: 0;
     width: 100%;
 }
@@ -17,7 +17,8 @@
 .footer .footer-content {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    margin: 50px;
+    padding-top: 20px;
+    margin: 0 50px;
 
     .contact-info {
         max-width: 500px;
