@@ -41,7 +41,7 @@ function Page() {
           paddingLeft: `${padding.left}px`,
           paddingRight: `${padding.right}px`,
           paddingTop: `${padding.top}px`,
-          marginBottom: "150px"
+          marginBottom: "150px",
         }}
       >
         <Preview images={images} />
@@ -49,16 +49,37 @@ function Page() {
         <div style={{ position: "relative", width: "300px" }}></div>
 
         <div>
-          <h1
+          <div
             style={{
-              color: "black",
-              marginTop: "100px",
-              fontSize: "28px",
-              fontWeight: "500",
+              display: "flex",
+              justifyContent: "space-between", // ชิดขอบซ้ายและขวา
+              alignItems: "center", // จัดตำแหน่งในแนวตั้งให้อยู่ตรงกลาง
+              marginTop: "100px", // ระยะห่างจากด้านบน
             }}
           >
-            New Product
-          </h1>
+            <h1
+              style={{
+                color: "black",
+                fontSize: "28px",
+                fontWeight: "500",
+                margin: "0", // เอาระยะขอบออกเพื่อให้ชิดกับขอบ
+              }}
+            >
+              New Product
+            </h1>
+            <a
+              href="/"
+              style={{
+                color: "black",
+                fontSize: "16px",
+                fontWeight: "400",
+                textDecoration: "none",
+              }}
+            >
+              See More {">"} {">"}
+            </a>
+          </div>
+
           <div className="product-container">
             <ProductCard
               productName="Mega space Moolly 100% Series 2"
@@ -95,16 +116,39 @@ function Page() {
         </div>
 
         <div>
-          <h1
-            style={{
-              color: "black",
-              marginTop: "100px",
-              fontSize: "28px",
-              fontWeight: "500",
-            }}
-          >
-            Recommendation
-          </h1>
+          <div>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between", // ชิดขอบซ้ายและขวา
+                alignItems: "center", // จัดตำแหน่งในแนวตั้งให้อยู่ตรงกลาง
+                marginTop: "100px", // ระยะห่างจากด้านบน
+              }}
+            >
+              <h1
+                style={{
+                  color: "black",
+                  fontSize: "28px",
+                  fontWeight: "500",
+                  margin: "0", // เอาระยะขอบออกเพื่อให้ชิดกับขอบ
+                }}
+              >
+                Recommendation
+              </h1>
+              <a
+                href="/"
+                style={{
+                  color: "black",
+                  fontSize: "16px",
+                  fontWeight: "400",
+                  textDecoration: "none",
+                }}
+              >
+                See More {">"} {">"}
+              </a>
+            </div>
+          </div>
+
           <div className="product-container">
             <ProductCard
               productName="Mega space Moolly 100% Series 2"
@@ -152,35 +196,51 @@ function Page() {
             Brand
           </h1>
 
-          <div  className="brand">
+          <div className="brand">
             <a href="/">
-              <img src="/Images/Popmart.png" alt="Popmart" className="Popmart"/>
+              <img
+                src="/Images/Popmart.png"
+                alt="Popmart"
+                className="Popmart"
+              />
             </a>
 
             <a href="/">
-              <img src="/Images/52Toys.png" alt="52Toys" className="52Toys"/>
+              <img src="/Images/52Toys.png" alt="52Toys" className="52Toys" />
             </a>
 
             <a href="/">
-              <img src="/Images/Toycity.png" alt="Toycity" className="Toycity"/>
+              <img
+                src="/Images/Toycity.png"
+                alt="Toycity"
+                className="Toycity"
+              />
             </a>
 
             <a href="/">
-              <img src="/Images/Findinguni.png" alt="Findinguni" className="Findinguni"/>
+              <img
+                src="/Images/Findinguni.png"
+                alt="Findinguni"
+                className="Findinguni"
+              />
             </a>
 
             <a href="/">
-              <img src="/Images/Heyone.png" alt="Heyone" className="Heyone"/>
+              <img src="/Images/Heyone.png" alt="Heyone" className="Heyone" />
             </a>
 
             <a href="/">
-              <img src="/Images/Tntspace.png" alt="Tntspace" className="Tntspace"/>
+              <img
+                src="/Images/Tntspace.png"
+                alt="Tntspace"
+                className="Tntspace"
+              />
             </a>
           </div>
         </div>
       </div>
 
-      <Footer/>
+      <Footer />
       <Copyrights />
     </div>
   );
