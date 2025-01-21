@@ -1,19 +1,21 @@
 /* navbar.scss */
-$primary-color: white;  // กำหนดสีหลัก
-$hover-color: #0096C7;   // กำหนดสีสำหรับเมื่อเมาส์ชี้
+$primary-color: white; // กำหนดสีหลัก
+$hover-color: #0096c7; // กำหนดสีสำหรับเมื่อเมาส์ชี้
 
 .navbar {
   background-color: $primary-color;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 40px;
   padding-top: 10px;
   padding-left: 50px;
   padding-right: 50px;
   padding-bottom: 10px;
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1); /* เพิ่มความชัดเจนให้เงามากขึ้น */
-  position: relative; /* เพิ่มตำแหน่งเพื่อให้แน่ใจว่า shadow จะแสดงผลได้ดี */
-  z-index: 1; /* เพิ่ม z-index เพื่อให้ navbar อยู่ด้านบนสุด */
+  position: fixed; /* เพิ่มตำแหน่งเพื่อให้แน่ใจว่า shadow จะแสดงผลได้ดี */
+  z-index: 200; /* ให้เมนูแสดงบนสุด */
+  width: 100%;
 
   .nav-links {
     list-style: none;
@@ -21,6 +23,25 @@ $hover-color: #0096C7;   // กำหนดสีสำหรับเมื่�
     padding: 0;
     display: flex;
     gap: 60px;
+
+    @media (max-width: 700px) {
+      display: none; // ซ่อนเมนูหลักในมือถือ
+    }
+
+    @media (max-width: 1200px) {
+      font-size: 10px;
+      gap: 50px;
+    }
+
+    @media (max-width: 900px) {
+      font-size: 10px;
+      gap: 15px;
+    }
+
+    @media (max-width: 750px) {
+      font-size: 10px;
+      gap: 15px;
+    }
   }
 
   .nav-links a {
@@ -29,6 +50,18 @@ $hover-color: #0096C7;   // กำหนดสีสำหรับเมื่�
     font-weight: 500;
     font-size: 13px;
     transition: color 0.3s ease;
+
+    @media (max-width: 1200px) {
+      font-size: 10px;
+    }
+
+    @media (max-width: 500px) {
+      font-size: 10px;
+    }
+
+    @media (max-width: 700px) {
+      font-size: 10px;
+    }
   }
 
   .nav-links a:hover {
@@ -40,18 +73,23 @@ $hover-color: #0096C7;   // กำหนดสีสำหรับเมื่�
     display: none;
     cursor: pointer;
     flex-direction: column;
-    gap: 5px;
-    width: 30px;
-    height: 25px;
+    gap: 4px;
+    width: 28px;
+    height: 22px;
     justify-content: space-between;
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    // left: 10px; /* หรือสามารถปรับค่าได้ตามต้องการ */
+    transform: translateY(-50%);
   }
 
   .bar {
     background-color: black;
-    height: 4px;
+    height: 3px;
     width: 100%;
+    border-radius: 10px;
     transition: transform 0.3s ease;
-    
   }
 
   /* Sidebar Menu (ซ่อนเมนูเมื่อไม่คลิก) */
@@ -59,7 +97,7 @@ $hover-color: #0096C7;   // กำหนดสีสำหรับเมื่�
     position: fixed; /* ทำให้เมนูแสดงอยู่ที่ตำแหน่งด้านข้าง */
     top: 0;
     left: -250px; /* ซ่อนเมนูที่ด้านซ้าย */
-    width: 250px; /* ความกว้างของ sidebar */
+    width: 150px; /* ความกว้างของ sidebar */
     height: 100%;
     background-color: $primary-color;
     display: flex;
@@ -70,8 +108,8 @@ $hover-color: #0096C7;   // กำหนดสีสำหรับเมื่�
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
     a {
-      padding: 15px;
-      font-size: 16px;
+      padding: 10px;
+      font-size: 12px;
       text-align: left;
       display: block;
       color: black;
@@ -85,9 +123,19 @@ $hover-color: #0096C7;   // กำหนดสีสำหรับเมื่�
   }
 
   /* Media Query สำหรับ Mobile */
-  @media (max-width: 700px) {
-    flex-direction: column;
+  @media (max-width: 770px) {
+    flex-direction: row;
     align-items: flex-start;
+
+    .header {
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .bars {
+      display: flex;
+      order: -1; /* ให้ .bars อยู่ซ้ายสุด */
+    }
 
     .nav-links {
       display: none; /* ซ่อนเมนูหลัก */
@@ -95,13 +143,11 @@ $hover-color: #0096C7;   // กำหนดสีสำหรับเมื่�
       margin-top: 20px;
     }
 
-    .bars {
-      display: flex; /* แสดง hamburger menu */
-    }
-
     /* เมื่อคลิกที่ hamburger, ให้แสดง sidebar */
-    .active .mobile-menu {
-      left: 0; /* เลื่อนเมนูจากซ้ายไปขวา */
+    .mobile-menu {
+      &.active {
+        left: 0; /* เลื่อนเมนูจากซ้ายไปขวา */
+      }
     }
 
     .active .nav-links {
@@ -120,14 +166,61 @@ $hover-color: #0096C7;   // กำหนดสีสำหรับเมื่�
 
 .Logo {
   width: 180px;
+  transition: width 0.1s ease;
+
+  @media (max-width: 1300px) {
+    width: 140px; // ปรับขนาดโลโก้ให้เล็กลงสำหรับหน้าจอแท็บเล็ต
+  }
+
+  @media (max-width: 800px) {
+    width: 120px; // ปรับขนาดโลโก้ให้เล็กลงสำหรับหน้าจอแท็บเล็ต
+  }
+
+  @media (max-width: 500px) {
+    width: 80px; // ปรับขนาดโลโก้ให้เล็กลงสำหรับหน้าจอมือถือ
+  }
+
+  @media (max-width: 770px) {
+    display: none; // ซ่อนเมนูหลักในมือถือ
+  }
 }
 
 .Favorite {
   width: 22px;
+  @media (max-width: 770px) {
+    display: none; // ซ่อนเมนูหลักในมือถือ
+  }
+
+  @media (max-width: 1200px) {
+    width: 20px;
+  }
+
+  @media (max-width: 900px) {
+    width: 16px;
+  }
+
+  @media (max-width: 750px) {
+    width: 14px;
+  }
 }
 
 .Cart {
   width: 20px;
+  @media (max-width: 770px) {
+    display: none; // ซ่อนเมนูหลักในมือถือ
+  }
+
+  @media (max-width: 1200px) {
+    width: 20px;
+  }
+
+  @media (max-width: 900px) {
+    width: 16px;
+  }
+
+  @media (max-width: 750px) {
+    width: 14px;
+  }
 }
 
 .search-container {
@@ -141,11 +234,40 @@ $hover-color: #0096C7;   // กำหนดสีสำหรับเมื่�
   border: 1px solid #ddd;
   border-radius: 100px;
   font-size: 13px;
-  width: 450px;
   outline: none;
+  width: 100%; // ค่าเริ่มต้นเต็มความกว้างของ container
+  max-width: 300px; // ความกว้างสูงสุดเริ่มต้นสำหรับหน้าจอขนาดเล็ก
+  min-width: 200px;
 
   &::placeholder {
-    color: #9F9F9F;
+    color: #9f9f9f;
+  }
+
+  // ขนาดหน้าจอเดสก์ท็อปใหญ่
+  @media (min-width: 1248px) {
+    width: 500;
+    max-width: 600px;
+    font-size: 13px;
+  }
+
+  @media (min-width: 970px) {
+    width: 300;
+    max-width: 600px;
+    font-size: 13px;
+  }
+
+  // ขนาดหน้าจอแท็บเล็ต
+  @media (min-width: 768px) and (max-width: 899px) {
+    width: 90%;
+    max-width: 400px;
+    font-size: 12px;
+  }
+
+  // ขนาดหน้าจอมือถือ
+  @media (max-width: 767px) {
+    width: 95%;
+    max-width: 600px;
+    font-size: 10px;
   }
 }
 
@@ -156,16 +278,31 @@ $hover-color: #0096C7;   // กำหนดสีสำหรับเมื่�
 .gradient-button {
   display: inline-block;
   padding: 8px 20px;
-  background: linear-gradient(45deg, #023E8A, #0077B6);
+  background: linear-gradient(45deg, #023e8a, #0077b6);
   color: white;
   font-size: 13px;
   font-weight: bold;
   text-align: center;
   border-radius: 100px;
+
+  @media (max-width: 1200px) {
+    font-size: 10px;
+    padding: 8px 16px;
+  }
+
+  @media (max-width: 900px) {
+    font-size: 10px;
+    padding: 8px 14px;
+  }
+
+  @media (max-width: 750px) {
+    font-size: 10px;
+    padding: 8px 12px;
+  }
 }
 
 .gradient-button:hover {
-  background: linear-gradient(45deg, #0077B6, #023E8A);
+  background: linear-gradient(45deg, #0077b6, #023e8a);
 }
 
 .search-wrapper {

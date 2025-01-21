@@ -15,13 +15,12 @@ function Page() {
           backgroundColor: "white", 
           paddingLeft: "140px", 
           paddingRight: "140px", 
-          paddingTop:"50px",
-          paddingBottom:"50px",
+          paddingTop:"50px"
         }}>
         <Preview images={images} />
       </div>
-      <Footer />
-      <Copyrights />
+      <Footer/>
+      <Copyrights/>
     </div>
   );
 }

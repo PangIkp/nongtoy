@@ -1,14 +1,32 @@
 "use client"
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "../Styles/Navbar.scss";
 import Link from "next/link";
 
-const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+const Navbar: React.FC = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false); // กำหนดประเภทให้ useState
+  const menuRef = useRef<HTMLDivElement>(null); // ใช้ Ref สำหรับอ้างอิง Sidebar
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen); // สลับสถานะเมนู
+  const toggleMenu = (): void => {
+    setIsMenuOpen(!isMenuOpen); // สลับสถานะของเมนู
   };
+
+  const handleClickOutside = (event: MouseEvent): void => {
+    // ตรวจสอบว่าคลิกอยู่นอก Sidebar หรือไม่
+    if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+      setIsMenuOpen(false); // ปิด Sidebar
+    }
+  };
+
+  useEffect(() => {
+    // เพิ่ม Event Listener สำหรับตรวจจับการคลิก
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      // ลบ Event Listener เมื่อ Component ถูกถอด
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
     <div className="navbar">
@@ -54,10 +72,16 @@ const Navbar = () => {
       </div>
 
       {/* เมนู sidebar */}
-      <div className={`mobile-menu ${isMenuOpen ? "active" : ""}`}>
+      <div
+        className={`mobile-menu ${isMenuOpen ? "active" : ""}`}
+        ref={menuRef} // อ้างอิง Sidebar
+      >
+        <a href="/">Home</a>
         <a href="/toymatch">Toy Match</a>
         <a href="/arttoy">Art Toy</a>
         <a href="/community">Community</a>
+        <a href="/favorite">Favorite</a>
+        <a href="/cart">Cart</a>
       </div>
     </div>
   );

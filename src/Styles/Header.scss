@@ -1,13 +1,3 @@
-* {
-  box-sizing: border-box; // ตั้งค่า box-sizing ให้กับทุก element
-}
-
-html,
-body {
-  margin: 0;
-  height: 100%; // ให้ความสูงเป็น 100% ของหน้าจอ
-}
-
 $primary-color: #0096c7; // กำหนดสีหลัก
 $hover-color: #2980b9;
 
@@ -20,6 +10,9 @@ $hover-color: #2980b9;
   padding-left: 50px;
   padding-right: 50px;
   gap: 10px;
+  width: 100%;
+  position: fixed;
+  z-index: 120;
 }
 
 .header a {
