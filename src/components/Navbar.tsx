@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState, useRef, useEffect } from "react";
 import "../Styles/Navbar.scss";
 import Link from "next/link";
@@ -31,7 +31,9 @@ const Navbar: React.FC = () => {
   return (
     <div className="navbar">
       <div className="container">
+        <a href="/">
         <img src="/Images/Logo.png" alt="Logo" className="Logo" />
+        </a>
       </div>
 
       {/* เมนูหลัก (แสดงใน desktop) */}
