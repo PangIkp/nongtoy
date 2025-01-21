@@ -25,12 +25,12 @@ const Preview: React.FC<PreviewProps> = ({ images }) => {
         justifyContent: "center",
         alignItems: "center",
         position: "relative",
-        width: "1/2",
+        width: "100%",
         borderRadius: "10px", // เพิ่ม border-radius สำหรับมุมของ container
         overflow: "hidden", // ทำให้เนื้อหาภายในไม่ล้น
       }}
     >
-      <button
+    <button
         onClick={prevImage}
         style={{
           position: "absolute",
@@ -38,10 +38,8 @@ const Preview: React.FC<PreviewProps> = ({ images }) => {
           backgroundColor: "rgba(0, 0, 0, 0.5)",
           color: "white",
           border: "none",
-          padding: "10px",
           cursor: "pointer",
-          zIndex: 100,
-        }}
+          zIndex: 100,        }}
       >
         &lt;
       </button>
@@ -51,7 +49,8 @@ const Preview: React.FC<PreviewProps> = ({ images }) => {
           style={{
             display: "flex",
             transition: "transform 0.5s ease",
-            transform: `translateX(-${currentIndex * 100}%)`, // ใช้ translateX เพื่อเลื่อนภาพ
+            transform: `translateX(-${currentIndex * 100}%)`,
+            width: `${images.length * 50}%`, // กำหนดความกว้างของ container
           }}
         >
           {images.map((image, index) => (
@@ -59,7 +58,10 @@ const Preview: React.FC<PreviewProps> = ({ images }) => {
               key={index}
               src={image}
               alt={`Preview ${index + 1}`}
-              style={{ width: "100%" }}
+              style={{
+                width: "100%", // กำหนดให้ภาพใช้ความกว้างเต็มของ parent
+                minWidth: "100%", // ป้องกันการแบ่งเป็นคอลัมน์
+              }}
             />
           ))}
         </div>
