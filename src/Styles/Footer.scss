@@ -8,12 +8,10 @@
     background-color: #323232;
     color: white;
     text-align: left;
-    padding-bottom: 50px;
     overflow: hidden;
     bottom: 0;
-    padding-bottom: 20px;
+    padding-bottom: 30px;
     width: 100%;
-
 }
 
 .footer .footer-content {
@@ -21,13 +19,14 @@
     grid-template-columns: repeat(2, 1fr);
     padding-top: 20px;
     margin: 0 50px;
-    padding-left: 50px;
 
     .contact-info {
         max-width: 500px;
         margin: auto 0;
 
         .contact {
+            padding-left: 20px;
+            padding-right: 50px;
             display: flex;
             align-items: center;
             /* จัดกึ่งกลางแนวนอน */
@@ -88,6 +87,30 @@
             display: flex;
         }
     }
+}
 
+@media screen and (max-width: 500px) {
 
+    .footer .footer-content {
+        grid-template-columns: 1fr;
+
+        .contact-info {
+            margin: 0 auto;
+            text-align: center;
+
+            .contact {
+                justify-content: left;
+                margin-bottom: 20px;
+            }
+
+            a {
+                text-align: left;
+            }
+        }
+
+        .about {
+            margin: 0 auto;
+            text-align: left;
+        }
+    }
 }
