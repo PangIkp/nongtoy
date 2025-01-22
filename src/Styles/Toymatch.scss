@@ -1,0 +1,144 @@
+.image-container {
+  position: relative;
+  display: block;
+
+  .Toymatch {
+    display: block;
+    width: 100vw; // กำหนดความกว้างเต็มจอ
+    height: auto; // ให้ความสูงปรับตามเนื้อหา
+    padding-top: 80px; // เพิ่มระยะห่างด้านบนตามที่ต้องการ
+  }
+
+  .toymatch-button {
+    position: absolute;
+    bottom: 10.5vw; // ระยะจากด้านล่างของภาพ
+    right: 50%;
+    transform: translateX(50%);
+    background: linear-gradient(45deg, #023e8a, #0077b6);
+    color: white;
+    border: none;
+    padding: 1vw 4vw; // ใช้หน่วย vw เพื่อให้สัมพันธ์กับความกว้างหน้าจอ
+    text-align: center;
+    border-radius: 100px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1.8vw; // ขนาดฟอนต์สัมพันธ์กับความกว้างหน้าจอ
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+
+    &:hover {
+      background: linear-gradient(45deg, #0077b6, #023e8a);
+    }
+
+    &:active {
+      transform: scale(0.95); // ลดขนาดเมื่อกดปุ่ม
+    }
+  }
+
+  // Media queries สำหรับการตอบสนองหน้าจอขนาดเล็ก
+  @media (max-width: 768px) {
+    .toymatch-button {
+      padding: 1vw 4vw;
+      font-size: 1.8vw;
+    }
+  }
+
+  @media (max-width: 375px) {
+    .toymatch-button {
+      padding: 1vw 4vw;
+      font-size: 1.5vw;
+    }
+  }
+}
+
+.tagline-container {
+  width: 100vw;
+  height: 10vw;
+  background-color: #0077b6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .tagline {
+    font-size: 1.8vw;
+    font-weight: 600;
+  }
+}
+
+// คำถาม และตัวเลือก
+
+.question {
+  font-size: 1.5vw;
+  color: black;
+  text-align: center;
+  margin-bottom: 3vw;
+}
+
+.option-container {
+  text-align: center;
+  display: flex;
+  gap: 2vw;
+  padding-left: 2vw;
+  padding-right: 2vw;
+
+  .box-option {
+    border-radius: 10px;
+    background-color: #d2f6ff;
+    padding: 2vw;
+    width: 20vw;
+    border: 1px solid #9f9f9f;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+
+    /* เมื่อ hover */
+    &:hover {
+      // background-color: #A4E2F1;
+      transform: scale(1.1);
+    //   border: 2px solid #0096c7;
+    }
+
+    /* เมื่อคลิก (active) */
+    &:active,
+    &.active {
+      background-color: #80e0ff;
+      color: white;
+      border: 2px solid #0096c7;
+    }
+
+    .option {
+      font-size: 1vw;
+      font-weight: 300;
+      color: black;
+      transition: color 0.3s ease;
+    }
+  }
+}
+
+.close-line {
+  border-bottom: 1.8px solid #d9d9d9; /* สีเทาอ่อน, ขนาดเส้น 2px */
+  margin-top: 2vw;
+  margin-bottom: 4vw;
+}
+
+.result-button-container {
+  display: flex;
+  justify-content: center; /* จัดกลางในแนวนอน */
+  margin-bottom: 10vw;
+  margin-top: 5vw;
+}
+
+.result-button {
+  background: linear-gradient(45deg, #023e8a, #0077b6);
+  text-align: center;
+  color: white;
+  border: none;
+  padding: 1vw 3vw;
+  border-radius: 100px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1vw; 
+
+  &:hover {
+    background: linear-gradient(45deg, #0077b6, #023e8a);
+  }
+}
