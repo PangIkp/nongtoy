@@ -22,7 +22,7 @@
     border-radius: 100px;
     font-weight: bold;
     cursor: pointer;
-    font-size: 1.8vw; // ขนาดฟอนต์สัมพันธ์กับความกว้างหน้าจอ
+    font-size: 25px; // ขนาดฟอนต์สัมพันธ์กับความกว้างหน้าจอ
     transition: transform 0.3s ease, background-color 0.3s ease;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
 
@@ -36,65 +36,100 @@
   }
 
   // Media queries สำหรับการตอบสนองหน้าจอขนาดเล็ก
-  @media (max-width: 768px) {
+ @media (max-width: 768px) {
     .toymatch-button {
       padding: 1vw 4vw;
-      font-size: 1.8vw;
+      font-size: 2.8vw;
     }
   }
 
   @media (max-width: 375px) {
     .toymatch-button {
-      padding: 1vw 4vw;
-      font-size: 1.5vw;
+      padding: 2vw 5vw;
+      font-size: 3.0vw;
     }
   }
 }
 
 .tagline-container {
   width: 100vw;
-  height: 10vw;
-  background-color: #0077b6;
+  height: 8vw;
+  background-color: #0077b6; 
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 6px;
 
   .tagline {
-    font-size: 1.8vw;
+    font-size: 2vw;
     font-weight: 600;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  @media (max-width: 768px) {
+    .tagline {
+      font-size: 14px;
+    }
+  }
+
+  @media (max-width: 550px) {
+    .tagline {
+      font-size: 2vw;
+    }
+  }
+
+  @media (max-width: 375px) {
+    .tagline {
+      font-size: 2vw;
+    }
   }
 }
 
 // คำถาม และตัวเลือก
 
 .question {
-  font-size: 1.5vw;
+  font-size: 18px;
   color: black;
   text-align: center;
   margin-bottom: 3vw;
+
+  @media (max-width: 768px) {
+    font-size: 2vw;
+  }
+
+  @media (max-width: 550px) {
+    .tagline {
+      font-size: 2vw;
+    }
+  }
+
+  @media (max-width: 375px) {
+    font-size: 2vw;
+  }
 }
 
 .option-container {
-  text-align: center;
   display: flex;
-  gap: 2vw;
-  padding-left: 2vw;
-  padding-right: 2vw;
+  flex-wrap: wrap; /* ช่วยให้เกิดการขึ้นแถวใหม่เมื่อพื้นที่ไม่พอ */
+  gap: 20px; /* ระยะห่างระหว่างกล่อง */
+  justify-content: center; /* จัดเรียงกล่องให้อยู่ตรงกลาง */
+  padding: 10px;
 
   .box-option {
+    flex: 1 1 calc(25% - 20px); /* ใช้พื้นที่ 25% ของความกว้าง (4 คอนเทนเนอร์ในแถวเดียว) */
+    max-width: calc(25% - 20px); /* จำกัดความกว้างสูงสุดให้เท่ากัน */
     border-radius: 10px;
     background-color: #d2f6ff;
-    padding: 2vw;
-    width: 20vw;
+    padding: 30px;
     border: 1px solid #9f9f9f;
     transition: background-color 0.3s ease, transform 0.3s ease;
+    align-content: center;
     cursor: pointer;
 
     /* เมื่อ hover */
     &:hover {
-      // background-color: #A4E2F1;
       transform: scale(1.1);
-    //   border: 2px solid #0096c7;
     }
 
     /* เมื่อคลิก (active) */
@@ -106,13 +141,53 @@
     }
 
     .option {
-      font-size: 1vw;
+      font-size: 14px;
       font-weight: 300;
       color: black;
+      text-align: center;
       transition: color 0.3s ease;
+
+      @media (max-width: 1000px) {
+          font-size: 1.8vw;
+      }
+
+      @media (max-width: 768px) {
+        font-size: 1.8vw;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 1.8vw;
+  }
+      
+    }
+  }
+
+  @media (max-width: 1000px) {
+    .box-option {
+      flex: 1 1 calc(40% - 20px); /* แบ่งพื้นที่ 50% ของแถว (2 คอลัมน์) */
+      max-width: calc(40% - 20px);
+    }
+  }
+
+  /* Media Query สำหรับหน้าจอขนาดกลาง */
+  @media (max-width: 768px) {
+    .box-option {
+      flex: 1 1 calc(50% - 20px); /* แบ่งพื้นที่ 50% ของแถว (2 คอลัมน์) */
+      max-width: calc(50% - 20px);
+      padding: 10px;
+    }
+  }
+
+  /* Media Query สำหรับหน้าจอขนาดเล็ก */
+  @media (max-width: 480px) {
+    .box-option {
+      flex: 1 1 calc(100% - 20px); /* ใช้พื้นที่เต็ม 100% */
+      max-width: calc(100% - 20px);
+      padding: 10px;
     }
   }
 }
+
 
 .close-line {
   border-bottom: 1.8px solid #d9d9d9; /* สีเทาอ่อน, ขนาดเส้น 2px */
@@ -136,9 +211,20 @@
   border-radius: 100px;
   font-weight: bold;
   cursor: pointer;
-  font-size: 1vw; 
+  font-size: 16px; 
 
   &:hover {
     background: linear-gradient(45deg, #0077b6, #023e8a);
   }
+
+  @media (max-width: 768px) {
+      padding: 1.5vw 3vw;
+      font-size: 2.0vw;
+
+  }
+
+  @media (max-width: 375px) {
+      padding: 1.5vw 3vw;
+      font-size: 2.0vw;
+    }
 }
