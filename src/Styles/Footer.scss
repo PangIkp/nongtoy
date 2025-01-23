@@ -12,6 +12,7 @@
     bottom: 0;
     padding-bottom: 30px;
     width: 100%;
+    z-index: 3200; /* ทำให้ฟิลเตอร์อยู่เหนือองค์ประกอบอื่น ๆ */
 }
 
 .footer .footer-content {

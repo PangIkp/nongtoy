@@ -58,7 +58,7 @@ function Page() {
           <div>
             <div className="header-container">
               <h1>New Product</h1>
-              <a href="#">
+              <a href="/arttoy">
                 See More {">"} {">"}
               </a>
             </div>
@@ -103,7 +103,7 @@ function Page() {
           <div>
             <div className="header-container">
               <h1>Recommendation</h1>
-              <a href="#">
+              <a href="/arttoy">
                 See More {">"} {">"}
               </a>
             </div>
