@@ -123,48 +123,125 @@ const ProductFilter = () => {
           )}
         </div>
       </div>
-      
 
       <div>
         {/* ปุ่มตัวกรองที่จะแสดงเมื่อหน้าจอเล็กลง */}
-      <button
-        className="filter-button"
-        onClick={toggleFilter} // เมื่อคลิกจะเปิด/ปิดฟิลเตอร์
-      >
-        Filter
-      </button>
+        <button
+          className="filter-button"
+          onClick={toggleFilter} // เมื่อคลิกจะเปิด/ปิดฟิลเตอร์
+        >
+          Filter
+        </button>
 
-      {/* ฟิลเตอร์จะแสดงขึ้นเมื่อ showFilter เป็น true */}
-      {showFilter && (
-        <div className="filter-popup">
-          <div className="popup">
-            {/* Header ของฟิลเตอร์ */}
-            <div className="popup-header">
-              <h4>Category</h4>
-              <button
-                className="toggle-button"
-                onClick={toggleFilter} // คลิกเพื่อปิดฟิลเตอร์
-              >
-                &times; {/* ไอคอนสำหรับปิดฟิลเตอร์ */}
-              </button>
-            </div>
+        {/* ฟิลเตอร์จะแสดงขึ้นเมื่อ showFilter เป็น true */}
+        {showFilter && (
+          <div className="filter-popup">
+            <div className="popup">
+              {/* Header ของฟิลเตอร์ */}
+              <div className="popup-header">
+                <h4>Character</h4>
+                <button
+                  className="toggle-button"
+                  onClick={toggleFilter} // คลิกเพื่อปิดฟิลเตอร์
+                >
+                  &times; {/* ไอคอนสำหรับปิดฟิลเตอร์ */}
+                </button>
+              </div>
 
-            {/* ตัวเลือกของฟิลเตอร์ */}
-            <div className="popup-options">
-              <label>
-                <input type="checkbox" className="filter-checkbox" value="electronics" /> Electronics
-              </label>
-              <label>
-                <input type="checkbox" className="filter-checkbox" value="clothing" /> Clothing
-              </label>
-              <label>
-                <input type="checkbox" className="filter-checkbox" value="accessories" /> Accessories
-              </label>
+              {/* ตัวเลือกของฟิลเตอร์ */}
+              <div className="popup-options">
+                <label>
+                  <input
+                    type="checkbox"
+                    className="filter-checkbox"
+                    value="Hirono"
+                  />{" "}
+                  Hirono
+                </label>
+                <label>
+                  <input
+                    type="checkbox"
+                    className="filter-checkbox"
+                    value="Hirono"
+                  />{" "}
+                  Hirono
+                </label>
+                <label>
+                  <input
+                    type="checkbox"
+                    className="filter-checkbox"
+                    value="Hirono"
+                  />{" "}
+                  Hirono
+                </label>
+              </div>
+
+              <div className="popup-header">
+                <h4>Brand</h4>
+              </div>
+
+              <div className="popup-options">
+                <label>
+                  <input
+                    type="checkbox"
+                    className="filter-checkbox"
+                    value="POP MART"
+                  />{" "}
+                  POP MART
+                </label>
+                <label>
+                  <input
+                    type="checkbox"
+                    className="filter-checkbox"
+                    value="POP MART"
+                  />{" "}
+                  POP MART
+                </label>
+                <label>
+                  <input
+                    type="checkbox"
+                    className="filter-checkbox"
+                    value="POP MART"
+                  />{" "}
+                  POP MART
+                </label>
+              </div>
             </div>
           </div>
-        </div>
-      )}
+        )}
         <div className="product-container">
+          <ProductCard
+            productName="Mega space Moolly 100% Series 2"
+            productPrice="฿10.00"
+            productImage="/Images/Preview1.png"
+            productBrand="POP MART"
+            productQty="New"
+          />
+
+          <ProductCard
+            productName="Mega space Moolly 100% Series 2"
+            productPrice="฿10.00"
+            productImage="/Images/Preview1.png"
+            productBrand="POP MART"
+            productQty="New"
+          />
+
+          <ProductCard
+            productName="Mega space Moolly 100% Series 2"
+            productPrice="฿10.00"
+            productImage="/Images/Preview1.png"
+            productBrand="POP MART"
+            productQty="New"
+          />
+
+          <ProductCard
+            productName="Mega space Moolly 100% Series 2"
+            productPrice="฿10.00"
+            productImage="/Images/Preview1.png"
+            productBrand="POP MART"
+            productQty="New"
+          />
+
           <ProductCard
             productName="Mega space Moolly 100% Series 2"
             productPrice="฿10.00"

@@ -156,8 +156,12 @@
     cursor: pointer;
 
     &:hover {
-      background: #007b8f;
+      background: #D2F6FF;
     }
+  }
+  @media screen and (max-width: 450px) {
+    margin-top: 15vw;
+    width : 20vw;
   }
 }
 
