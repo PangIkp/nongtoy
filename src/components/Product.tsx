@@ -11,18 +11,18 @@ function Product() {
                         <div className='image_product'>
                             <div className='box_product_list_images'>
                                 <button className='button_images'>
-                                    <img className='images_item' src="https://c.wallhere.com/photos/fd/46/anime_girls_8ka_anime_games_anime_girls_eating_WLOP-2268494.jpg!s1" alt="Product Image 1" />
+                                    <img className='images_item' src="https://prod-eurasian-res.popmart.com/default/20231228_175154_803414__1200x1200.jpg?x-oss-process=image/format,webp" alt="Product Image 1" />
                                 </button>
                                 <button className='button_images'>
-                                    <img className='images_item' src="https://c.wallhere.com/photos/fd/46/anime_girls_8ka_anime_games_anime_girls_eating_WLOP-2268494.jpg!s1" alt="Product Image 2" />
+                                    <img className='images_item' src="https://prod-eurasian-res.popmart.com/default/20231228_175154_803414__1200x1200.jpg?x-oss-process=image/format,webp" alt="Product Image 2" />
                                 </button>
                                 <button className='button_images'>
-                                    <img className='images_item' src="https://c.wallhere.com/photos/fd/46/anime_girls_8ka_anime_games_anime_girls_eating_WLOP-2268494.jpg!s1" alt="Product Image 3" />
+                                    <img className='images_item' src="https://prod-eurasian-res.popmart.com/default/20231228_175154_803414__1200x1200.jpg?x-oss-process=image/format,webp" alt="Product Image 3" />
                                 </button>
 
                             </div>
                             <div className='show_product_images'>
-                                <img className='show_item' src="https://c.wallhere.com/photos/fd/46/anime_girls_8ka_anime_games_anime_girls_eating_WLOP-2268494.jpg!s1" alt="" />
+                                <img className='show_item' src="https://prod-eurasian-res.popmart.com/default/20231228_175154_803414__1200x1200.jpg?x-oss-process=image/format,webp" alt="" />
                             </div>
                         </div>
 
@@ -85,7 +85,7 @@ function Product() {
                         </div>
 
                         <div className='product_history_image'>
-                            <img src="https://c.wallhere.com/photos/fd/46/anime_girls_8ka_anime_games_anime_girls_eating_WLOP-2268494.jpg!s1" alt="" />
+                            <img src="https://prod-thailand-res.popmart.com/default/20241023_142059_550489____10_____1200x1200.jpg?x-oss-process=image/resize,p_30,format,webp,format,webp" alt="" />
                         </div>
                     </div>
                 </section>
