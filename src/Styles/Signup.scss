@@ -1,21 +1,22 @@
 .signup {
     overflow: hidden;
-    padding-top: 110px;
+    padding-top: 130px;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80vh;
+    min-height: 1100px;
     background: linear-gradient(0deg, #CAF0F8, #FFFFFF);
 
     .signup_form {
+        max-width: 800px;
+
         color: #000000;
-        padding: 60px 100px 100px 100px;
+        padding: 50px;
         background-color: #FFFFFF;
         border-radius: 25px;
         box-shadow: 5px 15px 30px 0px rgb(217, 217, 217);
 
         form {
-            width: 100%;
             border-radius: 10px;
         }
 
@@ -56,6 +57,7 @@
 
         .signup_form_input {
             width: 100%;
+            min-width: 200px;
             height: 50px;
             padding: 10px;
             font-size: 20px;
@@ -95,23 +97,36 @@
 
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 500px) {
     .signup {
-        padding-top: 50px;
-
-        .signup_form {
-            padding: 60px 50px 100px 50px;
-        }
+        padding-top: 100px;
+        background: white;
 
         .signup_form_input_container {
-            display: flex;
+            display: flex !important;
             flex-direction: column;
-            row-gap: 20px;
         }
 
-        .signup_form_button {
-            height: 50px;
+        .signup_wrapper {
+            width: 100%;
+        }
+
+        .signup_form {
+
+            box-shadow: none;
+
+            .signup_form_title {
+                font-size: 30px;
+            }
+
+            .signup_form_text {
+                font-size: 15px;
+                opacity: .5;
+            }
+
+            .signup_form_text2 {
+                font-size: 15px;
+            }
         }
     }
-
 }

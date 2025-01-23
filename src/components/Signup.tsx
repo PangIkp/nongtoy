@@ -4,10 +4,6 @@ import "../Styles/Signup.scss";
 const Signup = () => {
     return (
         <div className="signup">
-            <section className="signup_image">
-                <img src="Images/Signup.png" alt="" />
-            </section>
-
             <section className="signup_wrapper">
                 <section className="signup_form">
                     <form action="">
