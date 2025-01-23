@@ -11,13 +11,13 @@ function Product() {
                         <div className='image_product'>
                             <div className='box_product_list_images'>
                                 <button className='button_images'>
-                                    <img className='images_item' src="https://c.wallhere.com/photos/fd/46/anime_girls_8ka_anime_games_anime_girls_eating_WLOP-2268494.jpg!s1" alt="" />
+                                    <img className='images_item' src="https://c.wallhere.com/photos/fd/46/anime_girls_8ka_anime_games_anime_girls_eating_WLOP-2268494.jpg!s1" alt="Product Image 1" />
                                 </button>
                                 <button className='button_images'>
-                                    <img className='images_item' src="https://c.wallhere.com/photos/fd/46/anime_girls_8ka_anime_games_anime_girls_eating_WLOP-2268494.jpg!s1" alt="" />
+                                    <img className='images_item' src="https://c.wallhere.com/photos/fd/46/anime_girls_8ka_anime_games_anime_girls_eating_WLOP-2268494.jpg!s1" alt="Product Image 2" />
                                 </button>
                                 <button className='button_images'>
-                                    <img className='images_item' src="https://c.wallhere.com/photos/fd/46/anime_girls_8ka_anime_games_anime_girls_eating_WLOP-2268494.jpg!s1" alt="" />
+                                    <img className='images_item' src="https://c.wallhere.com/photos/fd/46/anime_girls_8ka_anime_games_anime_girls_eating_WLOP-2268494.jpg!s1" alt="Product Image 3" />
                                 </button>
 
                             </div>
@@ -31,8 +31,8 @@ function Product() {
 
                         <div className='pproduct_infoText_title_favorite'>
                             <p className='product_infoText_title'>HIRONO Reshape Series Figures</p>
-                            <button className='favorite_button'>
-                                <img src="Images/heart.png" alt="" />
+                            <button className='favorite_button' type="button" title="Add to favorites">
+                                <img src="Images/heart.png" alt="Heart icon" />
                             </button>
 
                         </div>
@@ -56,14 +56,16 @@ function Product() {
                         </div>
 
                         <div className='product_infoText_quantity'>
-                            <p className='quanntity_text'>Quanntity</p>
-                            <div className='quantity_controls'>
-                                <button>-</button>
-                                <form action="">
-                                    <input type='text' disabled defaultValue={1} />
-                                </form>
-                                <button>+</button>
-                            </div>
+
+                            <form action="">
+                                <label htmlFor='quantity' className='quanntity_text'>Quantity</label>
+                                <div className='quantity_controls'>
+                                    <button>-</button>
+                                    <input type='text' disabled defaultValue={1} id='quantity' />
+                                    <button>+</button>
+                                </div>
+                            </form>
+
                         </div>
 
                         <div className='product_infoText_button'>

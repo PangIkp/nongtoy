@@ -21,6 +21,7 @@
         height: 400px;
         max-width: 1400px;
         color: #000000;
+        margin-bottom: 100px;
 
         .productcart_title {
             font-size: 32px;
@@ -194,13 +195,13 @@
                 }
             }
 
-
-            .quanntity_text,
-            .size_text {
+            .size_text,
+            .quanntity_text {
                 font-size: 18px;
                 margin-bottom: 10px;
                 font-weight: 500;
             }
+
 
             .size_controls {
                 display: grid;
@@ -226,6 +227,7 @@
                 display: flex;
                 align-items: center; // จัดให้ตรงกลาง
                 column-gap: 10px;
+                margin-top: 10px;
 
                 button {
                     font-size: 18px;
