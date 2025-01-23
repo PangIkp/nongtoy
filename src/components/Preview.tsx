@@ -25,7 +25,7 @@ const Preview: React.FC<PreviewProps> = ({ images }) => {
         justifyContent: "center",
         alignItems: "center",
         position: "relative",
-        width: "100%",
+        width: "80vw",
         borderRadius: "10px", // เพิ่ม border-radius สำหรับมุมของ container
         overflow: "hidden", // ทำให้เนื้อหาภายในไม่ล้น
       }}

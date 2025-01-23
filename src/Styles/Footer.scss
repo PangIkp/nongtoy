@@ -12,6 +12,7 @@
     bottom: 0;
     padding-bottom: 30px;
     width: 100%;
+    z-index: 3200; /* ทำให้ฟิลเตอร์อยู่เหนือองค์ประกอบอื่น ๆ */
 }
 
 .footer .footer-content {
@@ -62,7 +63,7 @@
 
 
     .about {
-        max-width: 500px;
+        max-width: 100%;
         margin: 0 auto;
 
         .text1 {
@@ -80,7 +81,7 @@
             margin-top: 20px;
 
             img {
-                width: 35px;
+                width: 28px;
                 margin-right: 20px;
             }
 

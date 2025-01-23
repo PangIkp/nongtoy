@@ -8,18 +8,18 @@ import Preview from "@/components/Preview";
 import ProductCard from "@/components/ProductCard";
 
 function Page() {
-  const [padding, setPadding] = useState({ left: 140, right: 140, top: 180 });
+  const [padding, setPadding] = useState({ top: 180 });
 
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth > 1240) {
-        setPadding({ left: 200, right: 200, top: 180 }); // สำหรับหน้าจอที่กว้างกว่า 2840px
+        setPadding({ top: 180 }); // สำหรับหน้าจอที่กว้างกว่า 2840px
       } else if (window.innerWidth <= 480) {
-        setPadding({ left: 20, right: 20, top: 110 }); // หน้าจอเล็ก
+        setPadding({ top: 110 }); // หน้าจอเล็ก
       } else if (window.innerWidth <= 768) {
-        setPadding({ left: 50, right: 50, top: 110 });
+        setPadding({ top: 110 });
       } else if (window.innerWidth <= 1240) {
-        setPadding({ left: 60, right: 60, top: 140 });
+        setPadding({ top: 140 });
       }
     };
 
@@ -36,12 +36,18 @@ function Page() {
       <Navbar />
 
       <div
+        // style={{
+        //   backgroundColor: "white",
+        //   paddingLeft: `${padding.left}px`,
+        //   paddingRight: `${padding.right}px`,
+        //   paddingTop: `${padding.top}px`,
+        //   marginBottom: "150px",
+        // }}
         style={{
-          backgroundColor: "white",
-          paddingLeft: `${padding.left}px`,
-          paddingRight: `${padding.right}px`,
+          paddingLeft: "10vw",
+          paddingRight: "10vw",
           paddingTop: `${padding.top}px`,
-          marginBottom: "150px",
+          paddingBottom: "10vw",
         }}
       >
         <Preview images={images} />
@@ -49,101 +55,10 @@ function Page() {
         <div style={{ position: "relative", width: "300px" }}></div>
 
         <div>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between", // ชิดขอบซ้ายและขวา
-              alignItems: "center", // จัดตำแหน่งในแนวตั้งให้อยู่ตรงกลาง
-              marginTop: "100px", // ระยะห่างจากด้านบน
-            }}
-          >
-            <h1
-              style={{
-                color: "black",
-                fontSize: "28px",
-                fontWeight: "500",
-                margin: "0", // เอาระยะขอบออกเพื่อให้ชิดกับขอบ
-              }}
-            >
-              New Product
-            </h1>
-            <a
-              href="/"
-              style={{
-                color: "black",
-                fontSize: "16px",
-                fontWeight: "400",
-                textDecoration: "none",
-              }}
-            >
-              See More {">"} {">"}
-            </a>
-          </div>
-
-          <div className="product-container">
-            <ProductCard
-              productName="Mega space Moolly 100% Series 2"
-              productPrice="฿10.00"
-              productImage="/Images/Preview1.png"
-              productBrand="POP MART"
-              productQty="New"
-            />
-
-            <ProductCard
-              productName="Mega space Moolly 100% Series 2"
-              productPrice="฿10.00"
-              productImage="/Images/Preview1.png"
-              productBrand="POP MART"
-              productQty="New"
-            />
-
-            <ProductCard
-              productName="Mega space Moolly 100% Series 2"
-              productPrice="฿10.00"
-              productImage="/Images/Preview1.png"
-              productBrand="POP MART"
-              productQty="New"
-            />
-
-            <ProductCard
-              productName="Mega space Moolly 100% Series 2"
-              productPrice="฿10.00"
-              productImage="/Images/Preview1.png"
-              productBrand="POP MART"
-              productQty="New"
-            />
-          </div>
-        </div>
-
-        <div>
           <div>
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between", // ชิดขอบซ้ายและขวา
-                alignItems: "center", // จัดตำแหน่งในแนวตั้งให้อยู่ตรงกลาง
-                marginTop: "100px", // ระยะห่างจากด้านบน
-              }}
-            >
-              <h1
-                style={{
-                  color: "black",
-                  fontSize: "28px",
-                  fontWeight: "500",
-                  margin: "0", // เอาระยะขอบออกเพื่อให้ชิดกับขอบ
-                }}
-              >
-                Recommendation
-              </h1>
-              <a
-                href="/"
-                style={{
-                  color: "black",
-                  fontSize: "16px",
-                  fontWeight: "400",
-                  textDecoration: "none",
-                }}
-              >
+            <div className="header-container">
+              <h1>New Product</h1>
+              <a href="/arttoy">
                 See More {">"} {">"}
               </a>
             </div>
@@ -185,16 +100,56 @@ function Page() {
         </div>
 
         <div>
-          <h1
-            style={{
-              color: "black",
-              marginTop: "100px",
-              fontSize: "28px",
-              fontWeight: "500",
-            }}
-          >
-            Brand
-          </h1>
+          <div>
+            <div className="header-container">
+              <h1>Recommendation</h1>
+              <a href="/arttoy">
+                See More {">"} {">"}
+              </a>
+            </div>
+          </div>
+
+          <div className="product-container">
+            <ProductCard
+              productName="Mega space Moolly 100% Series 2"
+              productPrice="฿10.00"
+              productImage="/Images/Preview1.png"
+              productBrand="POP MART"
+              productQty="New"
+            />
+
+            <ProductCard
+              productName="Mega space Moolly 100% Series 2"
+              productPrice="฿10.00"
+              productImage="/Images/Preview1.png"
+              productBrand="POP MART"
+              productQty="New"
+            />
+
+            <ProductCard
+              productName="Mega space Moolly 100% Series 2"
+              productPrice="฿10.00"
+              productImage="/Images/Preview1.png"
+              productBrand="POP MART"
+              productQty="New"
+            />
+
+            <ProductCard
+              productName="Mega space Moolly 100% Series 2"
+              productPrice="฿10.00"
+              productImage="/Images/Preview1.png"
+              productBrand="POP MART"
+              productQty="New"
+            />
+          </div>
+        </div>
+
+        <div>
+          <div>
+            <div className="header-container">
+              <h1>Brand</h1>
+            </div>
+          </div>
 
           <div className="brand">
             <a href="/">

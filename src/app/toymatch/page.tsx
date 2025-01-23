@@ -43,8 +43,8 @@ function Toymatch() {
 
       <div
         style={{
-          paddingLeft: "15vw",
-          paddingRight: "15vw",
+          paddingLeft: "10vw",
+          paddingRight: "10vw",
           paddingTop: "10vw",
         }}
         ref={optionCardRef}
