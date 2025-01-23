@@ -1,0 +1,230 @@
+.image-container {
+  position: relative;
+  display: block;
+
+  .Toymatch {
+    display: block;
+    width: 100vw; // กำหนดความกว้างเต็มจอ
+    height: auto; // ให้ความสูงปรับตามเนื้อหา
+    padding-top: 80px; // เพิ่มระยะห่างด้านบนตามที่ต้องการ
+  }
+
+  .toymatch-button {
+    position: absolute;
+    bottom: 10.5vw; // ระยะจากด้านล่างของภาพ
+    right: 50%;
+    transform: translateX(50%);
+    background: linear-gradient(45deg, #023e8a, #0077b6);
+    color: white;
+    border: none;
+    padding: 1vw 4vw; // ใช้หน่วย vw เพื่อให้สัมพันธ์กับความกว้างหน้าจอ
+    text-align: center;
+    border-radius: 100px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 25px; // ขนาดฟอนต์สัมพันธ์กับความกว้างหน้าจอ
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+
+    &:hover {
+      background: linear-gradient(45deg, #0077b6, #023e8a);
+    }
+
+    &:active {
+      transform: scale(0.95); // ลดขนาดเมื่อกดปุ่ม
+    }
+  }
+
+  // Media queries สำหรับการตอบสนองหน้าจอขนาดเล็ก
+ @media (max-width: 768px) {
+    .toymatch-button {
+      padding: 1vw 4vw;
+      font-size: 2.8vw;
+    }
+  }
+
+  @media (max-width: 375px) {
+    .toymatch-button {
+      padding: 2vw 5vw;
+      font-size: 3.0vw;
+    }
+  }
+}
+
+.tagline-container {
+  width: 100vw;
+  height: 8vw;
+  background-color: #0077b6; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+
+  .tagline {
+    font-size: 2vw;
+    font-weight: 600;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  @media (max-width: 768px) {
+    .tagline {
+      font-size: 14px;
+    }
+  }
+
+  @media (max-width: 550px) {
+    .tagline {
+      font-size: 2vw;
+    }
+  }
+
+  @media (max-width: 375px) {
+    .tagline {
+      font-size: 2vw;
+    }
+  }
+}
+
+// คำถาม และตัวเลือก
+
+.question {
+  font-size: 18px;
+  color: black;
+  text-align: center;
+  margin-bottom: 3vw;
+
+  @media (max-width: 768px) {
+    font-size: 2vw;
+  }
+
+  @media (max-width: 550px) {
+    .tagline {
+      font-size: 2vw;
+    }
+  }
+
+  @media (max-width: 375px) {
+    font-size: 2vw;
+  }
+}
+
+.option-container {
+  display: flex;
+  flex-wrap: wrap; /* ช่วยให้เกิดการขึ้นแถวใหม่เมื่อพื้นที่ไม่พอ */
+  gap: 20px; /* ระยะห่างระหว่างกล่อง */
+  justify-content: center; /* จัดเรียงกล่องให้อยู่ตรงกลาง */
+  padding: 10px;
+
+  .box-option {
+    flex: 1 1 calc(25% - 20px); /* ใช้พื้นที่ 25% ของความกว้าง (4 คอนเทนเนอร์ในแถวเดียว) */
+    max-width: calc(25% - 20px); /* จำกัดความกว้างสูงสุดให้เท่ากัน */
+    border-radius: 10px;
+    background-color: #d2f6ff;
+    padding: 30px;
+    border: 1px solid #9f9f9f;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    align-content: center;
+    cursor: pointer;
+
+    /* เมื่อ hover */
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    /* เมื่อคลิก (active) */
+    &:active,
+    &.active {
+      background-color: #80e0ff;
+      color: white;
+      border: 2px solid #0096c7;
+    }
+
+    .option {
+      font-size: 14px;
+      font-weight: 300;
+      color: black;
+      text-align: center;
+      transition: color 0.3s ease;
+
+      @media (max-width: 1000px) {
+          font-size: 1.8vw;
+      }
+
+      @media (max-width: 768px) {
+        font-size: 1.8vw;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 1.8vw;
+  }
+      
+    }
+  }
+
+  @media (max-width: 1000px) {
+    .box-option {
+      flex: 1 1 calc(40% - 20px); /* แบ่งพื้นที่ 50% ของแถว (2 คอลัมน์) */
+      max-width: calc(40% - 20px);
+    }
+  }
+
+  /* Media Query สำหรับหน้าจอขนาดกลาง */
+  @media (max-width: 768px) {
+    .box-option {
+      flex: 1 1 calc(50% - 20px); /* แบ่งพื้นที่ 50% ของแถว (2 คอลัมน์) */
+      max-width: calc(50% - 20px);
+      padding: 10px;
+    }
+  }
+
+  /* Media Query สำหรับหน้าจอขนาดเล็ก */
+  @media (max-width: 480px) {
+    .box-option {
+      flex: 1 1 calc(100% - 20px); /* ใช้พื้นที่เต็ม 100% */
+      max-width: calc(100% - 20px);
+      padding: 10px;
+    }
+  }
+}
+
+
+.close-line {
+  border-bottom: 1.8px solid #d9d9d9; /* สีเทาอ่อน, ขนาดเส้น 2px */
+  margin-top: 2vw;
+  margin-bottom: 4vw;
+}
+
+.result-button-container {
+  display: flex;
+  justify-content: center; /* จัดกลางในแนวนอน */
+  margin-bottom: 10vw;
+  margin-top: 5vw;
+}
+
+.result-button {
+  background: linear-gradient(45deg, #023e8a, #0077b6);
+  text-align: center;
+  color: white;
+  border: none;
+  padding: 1vw 3vw;
+  border-radius: 100px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 16px; 
+
+  &:hover {
+    background: linear-gradient(45deg, #0077b6, #023e8a);
+  }
+
+  @media (max-width: 768px) {
+      padding: 1.5vw 3vw;
+      font-size: 2.0vw;
+
+  }
+
+  @media (max-width: 375px) {
+      padding: 1.5vw 3vw;
+      font-size: 2.0vw;
+    }
+}
