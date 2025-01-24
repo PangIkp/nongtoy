@@ -73,9 +73,9 @@
     .product_info {
         display: grid;
         grid-template-columns: 1.5fr 1fr;
-        height: 500px;
         max-width: 1250px;
         width: 100%;
+        height: fit-content;
 
 
 
@@ -103,7 +103,7 @@
                     grid-template-rows: repeat(auto-fill, minmax(1fr, 1fr));
                     width: 25%;
                     background-color: #FFFFFF;
-                    height: 500px;
+                    max-height: 700px;
                     overflow: hidden;
 
 
@@ -125,6 +125,7 @@
 
             .show_product_images {
                 width: 75%;
+                max-height: 700px;
 
                 .show_item {
                     width: 100%;
@@ -138,6 +139,7 @@
             margin-left: 20px;
             color: #000000;
             display: grid;
+            max-height: 700px;
 
             .pproduct_infoText_title_favorite {
                 display: flex;
@@ -318,7 +320,13 @@
         .product_infoText {
             margin-top: 20px;
             margin-left: 0 !important;
+            line-height: 2;
         }
+    }
+
+    .product_infoText_quantity {
+        margin-top: 10px;
+        margin-bottom: 10px;
     }
 
     .product_history {

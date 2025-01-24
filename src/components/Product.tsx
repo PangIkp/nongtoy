@@ -1,6 +1,7 @@
 import React from 'react'
 import '../Styles/Product.scss'
 import ProductCard from "@/components/ProductCard";
+import 'react-photo-view/dist/react-photo-view.css';
 
 function Product() {
     return (
@@ -19,6 +20,7 @@ function Product() {
                                 <button className='button_images'>
                                     <img className='images_item' src="https://prod-eurasian-res.popmart.com/default/20231228_175154_803414__1200x1200.jpg?x-oss-process=image/format,webp" alt="Product Image 3" />
                                 </button>
+
                             </div>
                             <div className='show_product_images'>
                                 <img className='show_item' src="https://prod-eurasian-res.popmart.com/default/20231228_175154_803414__1200x1200.jpg?x-oss-process=image/format,webp" alt="" />
@@ -55,7 +57,6 @@ function Product() {
                         </div>
 
                         <div className='product_infoText_quantity'>
-
                             <form action="">
                                 <label htmlFor='quantity' className='quanntity_text'>Quantity</label>
                                 <div className='quantity_controls'>
