@@ -19,7 +19,6 @@ function Product() {
                                 <button className='button_images'>
                                     <img className='images_item' src="https://prod-eurasian-res.popmart.com/default/20231228_175154_803414__1200x1200.jpg?x-oss-process=image/format,webp" alt="Product Image 3" />
                                 </button>
-
                             </div>
                             <div className='show_product_images'>
                                 <img className='show_item' src="https://prod-eurasian-res.popmart.com/default/20231228_175154_803414__1200x1200.jpg?x-oss-process=image/format,webp" alt="" />
