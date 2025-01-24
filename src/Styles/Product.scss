@@ -143,19 +143,22 @@
 
             .pproduct_infoText_title_favorite {
                 display: flex;
-                align-items: start;
                 justify-content: space-between;
 
                 .product_infoText_title {
                     font-size: 32px;
                     font-weight: bold;
                     width: 90%;
+                    height: 100%;
                 }
 
                 .favorite_button {
+                    height: 100%;
+                    padding: 12px;
                     width: 10%;
-                    margin-top: 10px;
-                    margin-right: 10px;
+                    display: flex;
+                    justify-content: center;
+
                     background-color: #FFFFFF;
                     border: none;
                     cursor: pointer;
@@ -327,6 +330,10 @@
     .product_infoText_quantity {
         margin-top: 10px;
         margin-bottom: 10px;
+    }
+
+    .favorite_button {
+        padding: 20px !important;
     }
 
     .product_history {
