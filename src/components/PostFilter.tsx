@@ -227,28 +227,42 @@ const PostFilter = () => {
         
         <div className="post-container">
           <PostCard
-            postName="HIRONO Reshape Series Figures"
+            postName="HIRONO Reshape"
             postPrice="฿380.00"
             postImage="/Images/PostHino.png"
             postProvince="Bangkok"
           />
 
           <PostCard
-            postName="HIRONO Reshape Series Figures"
+            postName="HIRONO Reshape"
             postPrice="฿380.00"
             postImage="/Images/PostHino.png"
             postProvince="Bangkok"
           />
 
           <PostCard
-            postName="HIRONO Reshape Series Figures"
+            postName="HIRONO Reshape"
             postPrice="฿380.00"
             postImage="/Images/PostHino.png"
             postProvince="Bangkok"
           />
 
           <PostCard
-            postName="HIRONO Reshape Series Figures"
+            postName="HIRONO Reshape"
+            postPrice="฿380.00"
+            postImage="/Images/PostHino.png"
+            postProvince="Bangkok"
+          />
+
+          <PostCard
+            postName="HIRONO Reshape"
+            postPrice="฿380.00"
+            postImage="/Images/PostHino.png"
+            postProvince="Bangkok"
+          />
+
+          <PostCard
+            postName="HIRONO Reshape"
             postPrice="฿380.00"
             postImage="/Images/PostHino.png"
             postProvince="Bangkok"
