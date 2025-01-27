@@ -54,12 +54,6 @@ function Product() {
                                 <button>Blind Box</button>
                                 <button>Box set</button>
                             </div>
-
-                            <label htmlFor="radio_btn">
-                                <input type="radio" name="radio_btn" id="radio_btn" />
-                                <span>Blind Box</span>
-
-                            </label>
                         </div>
 
                         <div className='product_infoText_quantity'>
