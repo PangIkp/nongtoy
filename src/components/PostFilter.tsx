@@ -1,19 +1,19 @@
 "use client";
 import React, { useState } from "react";
-import ProductCard from "./ProductCard";
-import "../Styles/ProductFilter.scss";
+import PostCard from "./PostCard";
+import "../Styles/PostFilter.scss";
 
-const ProductFilter = () => {
-  const [isExpandedCharacter, setIsExpandedCharacter] = useState(true);
-  const [isExpandedBrand, setIsExpandedBrand] = useState(true);
+const PostFilter = () => {
+  const [isExpandedRange, setIsExpandedRange] = useState(true);
+  const [isExpandedCon, setIsExpandedCon] = useState(true);
   const [showFilter, setShowFilter] = useState(false);
 
-  const toggleCharacter = () => {
-    setIsExpandedCharacter((prev) => !prev);
+  const toggleRange = () => {
+    setIsExpandedRange((prev) => !prev);
   };
 
-  const toggleBrand = () => {
-    setIsExpandedBrand((prev) => !prev);
+  const toggleCon = () => {
+    setIsExpandedCon((prev) => !prev);
   };
 
   const toggleFilter = () => {
@@ -22,7 +22,7 @@ const ProductFilter = () => {
 
   return (
     <div
-      className="arttoy-container"
+      className="post-container"
       style={{
         display: "flex",
         justifyContent: "space-between", // เว้นระยะห่างระหว่าง filter และ product-container
@@ -36,15 +36,15 @@ const ProductFilter = () => {
         {/* หมวดหมู่: ประเภทสินค้า */}
         <div className="filter-container">
           {/* Header พร้อมปุ่มเปิด/ปิด */}
-          <div className="filter-header" onClick={toggleCharacter}>
-            <h4>Characters</h4>
+          <div className="filter-header" onClick={toggleRange}>
+            <h4>Price Range</h4>
             <button className="toggle-button">
-              {isExpandedCharacter ? "▴" : "▾"}
+              {isExpandedRange ? "▴" : "▾"}
             </button>
           </div>
 
           {/* ตัวเลือกหมวดหมู่ (ซ่อน/แสดง) */}
-          {isExpandedCharacter && (
+          {isExpandedRange && (
             <div className="filter-options">
               <label>
                 <input
@@ -52,7 +52,7 @@ const ProductFilter = () => {
                   className="filter-checkbox"
                   value="electronics"
                 />{" "}
-                Hirono
+                Low to High
               </label>
               <label>
                 <input
@@ -60,15 +60,7 @@ const ProductFilter = () => {
                   className="filter-checkbox"
                   value="clothing"
                 />{" "}
-                Labubu
-              </label>
-              <label>
-                <input
-                  type="checkbox"
-                  className="filter-checkbox"
-                  value="accessories"
-                />{" "}
-                Crybaby
+                High to low
               </label>
             </div>
           )}
@@ -77,15 +69,15 @@ const ProductFilter = () => {
         {/* หมวดหมู่: สี */}
         <div className="filter-container">
           {/* Header พร้อมปุ่มเปิด/ปิด */}
-          <div className="filter-header" onClick={toggleBrand}>
-            <h4>Brand</h4>
+          <div className="filter-header" onClick={toggleCon}>
+            <h4>Condition</h4>
             <button className="toggle-button">
-              {isExpandedBrand ? "▴" : "▾"}
+              {isExpandedCon ? "▴" : "▾"}
             </button>
           </div>
 
           {/* ตัวเลือกหมวดหมู่ (ซ่อน/แสดง) */}
-          {isExpandedBrand && (
+          {isExpandedCon && (
             <div className="filter-options">
               <label>
                 <input
@@ -93,7 +85,7 @@ const ProductFilter = () => {
                   className="filter-checkbox"
                   value="red"
                 />{" "}
-                POP MART
+                New
               </label>
               <label>
                 <input
@@ -101,23 +93,39 @@ const ProductFilter = () => {
                   className="filter-checkbox"
                   value="blue"
                 />{" "}
-                52Toys
+                Used
+              </label>
+            </div>
+          )}
+        </div>
+
+        <div className="filter-container">
+          {/* Header พร้อมปุ่มเปิด/ปิด */}
+          <div className="filter-header" onClick={toggleRange}>
+            <h4>Post Date</h4>
+            <button className="toggle-button">
+              {isExpandedRange ? "▴" : "▾"}
+            </button>
+          </div>
+
+          {/* ตัวเลือกหมวดหมู่ (ซ่อน/แสดง) */}
+          {isExpandedRange && (
+            <div className="filter-options">
+              <label>
+                <input
+                  type="checkbox"
+                  className="filter-checkbox"
+                  value="electronics"
+                />{" "}
+                Newest
               </label>
               <label>
                 <input
                   type="checkbox"
                   className="filter-checkbox"
-                  value="black"
+                  value="clothing"
                 />{" "}
-                ToyCity
-              </label>
-              <label>
-                <input
-                  type="checkbox"
-                  className="filter-checkbox"
-                  value="white"
-                />{" "}
-                Finding Unicorn
+                Oldest
               </label>
             </div>
           )}
@@ -139,7 +147,7 @@ const ProductFilter = () => {
             <div className="popup">
               {/* Header ของฟิลเตอร์ */}
               <div className="popup-header">
-                <h4>Character</h4>
+                <h4>Price Range</h4>
                 <button
                   className="toggle-button"
                   onClick={toggleFilter} // คลิกเพื่อปิดฟิลเตอร์
@@ -154,9 +162,9 @@ const ProductFilter = () => {
                   <input
                     type="checkbox"
                     className="filter-checkbox"
-                    value="Hirono"  
+                    value="Hirono"
                   />{" "}
-                  Hirono
+                  Low to high
                 </label>
                 <label>
                   <input
@@ -164,20 +172,12 @@ const ProductFilter = () => {
                     className="filter-checkbox"
                     value="Hirono"
                   />{" "}
-                  Hirono
-                </label>
-                <label>
-                  <input
-                    type="checkbox"
-                    className="filter-checkbox"
-                    value="Hirono"
-                  />{" "}
-                  Hirono
+                  High to low
                 </label>
               </div>
 
               <div className="popup-header">
-                <h4>Brand</h4>
+                <h4>Condition</h4>
               </div>
 
               <div className="popup-options">
@@ -187,7 +187,7 @@ const ProductFilter = () => {
                     className="filter-checkbox"
                     value="POP MART"
                   />{" "}
-                  POP MART
+                  New
                 </label>
                 <label>
                   <input
@@ -195,7 +195,22 @@ const ProductFilter = () => {
                     className="filter-checkbox"
                     value="POP MART"
                   />{" "}
-                  POP MART
+                  Used
+                </label>
+              </div>
+
+              <div className="popup-header">
+                <h4>Post Date</h4>
+              </div>
+
+              <div className="popup-options">
+                <label>
+                  <input
+                    type="checkbox"
+                    className="filter-checkbox"
+                    value="POP MART"
+                  />{" "}
+                  Newest
                 </label>
                 <label>
                   <input
@@ -203,75 +218,40 @@ const ProductFilter = () => {
                     className="filter-checkbox"
                     value="POP MART"
                   />{" "}
-                  POP MART
+                  Oldest
                 </label>
               </div>
             </div>
           </div>
         )}
-        <div className="product-container">
-          <ProductCard
-            productName="Mega space Moolly 100% Series 2"
-            productPrice="฿10.00"
-            productImage="/Images/Preview1.png"
-            productBrand="POP MART"
-            productQty="New"
+        
+        <div className="post-container">
+          <PostCard
+            postName="HIRONO Reshape Series Figures"
+            postPrice="฿380.00"
+            postImage="/Images/PostHino.png"
+            postProvince="Bangkok"
           />
 
-          <ProductCard
-            productName="Mega space Moolly 100% Series 2"
-            productPrice="฿10.00"
-            productImage="/Images/Preview1.png"
-            productBrand="POP MART"
-            productQty="New"
+          <PostCard
+            postName="HIRONO Reshape Series Figures"
+            postPrice="฿380.00"
+            postImage="/Images/PostHino.png"
+            postProvince="Bangkok"
           />
 
-          <ProductCard
-            productName="Mega space Moolly 100% Series 2"
-            productPrice="฿10.00"
-            productImage="/Images/Preview1.png"
-            productBrand="POP MART"
-            productQty="New"
+          <PostCard
+            postName="HIRONO Reshape Series Figures"
+            postPrice="฿380.00"
+            postImage="/Images/PostHino.png"
+            postProvince="Bangkok"
           />
 
-          <ProductCard
-            productName="Mega space Moolly 100% Series 2"
-            productPrice="฿10.00"
-            productImage="/Images/Preview1.png"
-            productBrand="POP MART"
-            productQty="New"
-          />
-
-          <ProductCard
-            productName="Mega space Moolly 100% Series 2"
-            productPrice="฿10.00"
-            productImage="/Images/Preview1.png"
-            productBrand="POP MART"
-            productQty="New"
-          />
-
-          <ProductCard
-            productName="Mega space Moolly 100% Series 2"
-            productPrice="฿10.00"
-            productImage="/Images/Preview1.png"
-            productBrand="POP MART"
-            productQty="New"
-          />
-
-          <ProductCard
-            productName="Mega space Moolly 100% Series 2"
-            productPrice="฿10.00"
-            productImage="/Images/Preview1.png"
-            productBrand="POP MART"
-            productQty="New"
-          />
-
-          <ProductCard
-            productName="Mega space Moolly 100% Series 2"
-            productPrice="฿10.00"
-            productImage="/Images/Preview1.png"
-            productBrand="POP MART"
-            productQty="New"
+          <PostCard
+            postName="HIRONO Reshape Series Figures"
+            postPrice="฿380.00"
+            postImage="/Images/PostHino.png"
+            postProvince="Bangkok"
           />
         </div>
       </div>
@@ -279,4 +259,4 @@ const ProductFilter = () => {
   );
 };
 
-export default ProductFilter;
+export default PostFilter;

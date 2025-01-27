@@ -1,0 +1,26 @@
+.brands-container {
+    display: flex;
+    gap: 20px;
+    left: 0;
+}
+
+.brand-column {
+    flex: 1;
+    width: 100px;
+    text-align: left;
+    font-size: 12px;
+    color: black; /* กำหนดสีข้อความเป็นสีดำทั้งหมด */
+    
+}
+
+.brand-column ul {
+    list-style: none;
+    margin: 10;
+    margin: 0;
+    margin-top: 8;
+}
+
+.brand-column ul li {
+    font-size: 12px;
+    margin-bottom: 5px;
+}

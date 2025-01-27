@@ -26,10 +26,7 @@ function Toymatch() {
 
       <div className="image-container">
         <img src="/Images/Toymatch.png" alt="Toymatch" className="Toymatch" />
-        <button
-          className="toymatch-button"
-          onClick={handleScrollToOptions}
-        >
+        <button className="toymatch-button" onClick={handleScrollToOptions}>
           Take the Quiz
         </button>
       </div>
@@ -65,12 +62,14 @@ function Toymatch() {
       </div>
 
       <div className="result-button-container">
-        <button
-          className="result-button"
-          onClick={() => alert("Button clicked!")}
-        >
-          Get my results
-        </button>
+        <a href="/result">
+          <button
+            className="result-button"
+            // onClick={() => alert("Button clicked!")}
+          >
+            Get my results
+          </button>
+        </a>
       </div>
 
       <Footer />

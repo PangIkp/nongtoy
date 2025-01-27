@@ -2,19 +2,37 @@
 import React, { useState, useRef, useEffect } from "react";
 import "../Styles/Navbar.scss";
 import Link from "next/link";
+import FilterNavbar from "./FilterNavbar";
 
 const Navbar: React.FC = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false); // กำหนดประเภทให้ useState
-  const menuRef = useRef<HTMLDivElement>(null); // ใช้ Ref สำหรับอ้างอิง Sidebar
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+  const [isHovering, setIsHovering] = useState<boolean>(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+  const buttonRef = useRef<HTMLDivElement>(null);
+  const filterNavbarRef = useRef<HTMLDivElement | null>(null); // ref สำหรับ FilterNavbar
 
   const toggleMenu = (): void => {
     setIsMenuOpen(!isMenuOpen); // สลับสถานะของเมนู
   };
 
-  const handleClickOutside = (event: MouseEvent): void => {
-    // ตรวจสอบว่าคลิกอยู่นอก Sidebar หรือไม่
-    if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
-      setIsMenuOpen(false); // ปิด Sidebar
+  const handleMouseEnter = (): void => {
+    setIsHovering(true); // แสดง dropdown เมื่อ hover ที่ปุ่มหรือที่ dropdown
+  };
+
+  const handleMouseLeave = (event: React.MouseEvent<HTMLDivElement>): void => {
+    const relatedTarget = event.relatedTarget;
+
+    // เช็คว่าถ้าเมาส์อยู่ใน FilterNavbar หรือ dropdown ไม่ให้ซ่อน
+    if (
+      relatedTarget &&
+      dropdownRef.current &&
+      !dropdownRef.current.contains(relatedTarget as Node) &&
+      buttonRef.current &&
+      !buttonRef.current.contains(relatedTarget as Node) &&
+      !filterNavbarRef.current?.contains(relatedTarget as Node) // เช็คว่าเมาส์อยู่ใน FilterNavbar
+    ) {
+      setIsHovering(false); // ซ่อน dropdown หลังจากดีเลย์
     }
   };
 
@@ -28,6 +46,12 @@ const Navbar: React.FC = () => {
     };
   }, []);
 
+  const handleClickOutside = (event: MouseEvent): void => {
+    if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+      setIsMenuOpen(false); // ปิด Sidebar
+    }
+  };
+
   return (
     <div className="navbar">
       <div className="container">
@@ -36,11 +60,37 @@ const Navbar: React.FC = () => {
         </a>
       </div>
 
-      {/* เมนูหลัก (แสดงใน desktop) */}
       <div className={`nav-links ${isMenuOpen ? "active" : ""}`}>
-        <a href="/toymatch">Toy Match</a>
-        <a href="/arttoy">Art Toy</a>
-        <a href="/community">Community</a>
+        <div>
+          <a href="/toymatch">Toy Match</a>
+        </div>
+
+        <div
+          className="art-toy-dropdown"
+          ref={buttonRef}
+          onMouseEnter={handleMouseEnter} // แสดง dropdown เมื่อ hover
+          onMouseLeave={handleMouseLeave} // ซ่อน dropdown เมื่อ mouse ออกจากทั้งสอ
+        >
+          <a href="/arttoy" style={{ padding: "35px" }}>
+            Art Toy{" "}
+          </a>
+          {isHovering && (
+            <div
+              className="dropdown-content"
+              ref={dropdownRef}
+              onMouseEnter={handleMouseEnter} // เมื่อ hover ที่ dropdown
+              onMouseLeave={handleMouseLeave} // เมื่อเมาส์ออกจาก dropdown
+            >
+              <div ref={filterNavbarRef}>
+                <FilterNavbar />
+              </div>
+            </div>
+          )}
+        </div>
+
+        <div>
+          <a href="/community">Community</a>
+        </div>
       </div>
 
       <div className="search-container">
@@ -59,8 +109,14 @@ const Navbar: React.FC = () => {
       </div>
 
       <div className="container">
+
+        <a>
         <img src="/Images/Favorite.png" alt="Favorite" className="Favorite" />
+        </a>
+
+        <a href="/cart">
         <img src="/Images/Cart.png" alt="Cart" className="Cart" />
+        </a>
         <Link href="/login">
           <p className="gradient-button">Login</p>
         </Link>
@@ -76,7 +132,7 @@ const Navbar: React.FC = () => {
       {/* เมนู sidebar */}
       <div
         className={`mobile-menu ${isMenuOpen ? "active" : ""}`}
-        ref={menuRef} // อ้างอิง Sidebar
+        ref={menuRef}
       >
         <a href="/">Home</a>
         <a href="/toymatch">Toy Match</a>

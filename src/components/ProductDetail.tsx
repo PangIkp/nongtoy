@@ -1,8 +1,8 @@
 import React from 'react'
-import '../Styles/Product.scss'
+import '../Styles/ProductDetail.scss'
 import ProductCard from "@/components/ProductCard";
 
-function Product() {
+function ProductDetail() {
     return (
         <div>
             <div className="product">
@@ -131,4 +131,4 @@ function Product() {
     );
 }
 
-export default Product
+export default ProductDetail

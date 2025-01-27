@@ -1,6 +1,6 @@
 .filter-container {
   margin-bottom: 20px;
-  width: 15vw; /* กำหนดความกว้างฟิลเตอร์ */
+  width: 16vw; /* กำหนดความกว้างฟิลเตอร์ */
   padding: 10px;
   display: block; /* แสดงฟิลเตอร์เมื่อหน้าจอใหญ่กว่า 830px */
 
@@ -69,8 +69,6 @@
 label {
   cursor: pointer; /* เปลี่ยน cursor เมื่อวางเมาส์บนข้อความของ label */
 }
-
-
 
 /* ปุ่มตัวกรองเมื่อหน้าจอเล็กกว่า 830px */
 .filter-popup {
@@ -158,18 +156,17 @@ label {
     color: black;
     font-size: 16px;
     padding: 8px;
-    width : 15vw;
+    width: 15vw;
     margin-top: 8vw;
     border-radius: 25;
     cursor: pointer;
 
     &:hover {
-      background: #D2F6FF;
+      background: #d2f6ff;
     }
   }
   @media screen and (max-width: 450px) {
     margin-top: 15vw;
-    width : 20vw;
-  }
+    width: 20vw;
+  } 
 }
-

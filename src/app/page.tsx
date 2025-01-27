@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import Copyrights from "@/components/Copyrights";
 import Preview from "@/components/Preview";
 import ProductCard from "@/components/ProductCard";
+import FilterNavbar from "@/components/FilterNavbar";
 
 function Page() {
   const [padding, setPadding] = useState({ top: 180 });
@@ -34,15 +35,9 @@ function Page() {
     <div style={{ backgroundColor: "white", minHeight: "100vh" }}>
       <Header />
       <Navbar />
+      {/* <FilterNavbar/> */}
 
       <div
-        // style={{
-        //   backgroundColor: "white",
-        //   paddingLeft: `${padding.left}px`,
-        //   paddingRight: `${padding.right}px`,
-        //   paddingTop: `${padding.top}px`,
-        //   marginBottom: "150px",
-        // }}
         style={{
           paddingLeft: "10vw",
           paddingRight: "10vw",

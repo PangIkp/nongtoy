@@ -3,20 +3,20 @@ import Navbar from '@/components/Navbar';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Copyrights from '@/components/Copyrights';
-import Cart from '@/components/Cart';
+import CartItem from "@/components/CartItem";
 
-function cart() {
+function Cart() {
     return (
         <div>
             <Header />
             <Navbar />
-            <Cart />
-            <Footer />
+            <CartItem/>
+            <Footer/>
             <Copyrights />
         </div>
     );
 
 }
 
-export default cart;
+export default Cart;
 
