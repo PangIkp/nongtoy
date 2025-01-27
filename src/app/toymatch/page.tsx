@@ -7,18 +7,18 @@ import OptionCard from "@/components/OptionCard";
 import Copyrights from "@/components/Copyrights";
 
 function Toymatch() {
-   // สร้าง ref สำหรับการเลื่อนไปยัง OptionCard
-   const optionCardRef = useRef<HTMLDivElement>(null);
+  // สร้าง ref สำหรับการเลื่อนไปยัง OptionCard
+  const optionCardRef = useRef<HTMLDivElement>(null);
 
-   const handleScrollToOptions = () => {
-     // ใช้ scrollIntoView เพื่อเลื่อนหน้าไปยัง OptionCard
-     if (optionCardRef.current) {
-       optionCardRef.current.scrollIntoView({
-         behavior: "smooth", // ใช้การเลื่อนที่ราบรื่น
-         block: "start", // เลื่อนไปที่เริ่มต้นของ div
-       });
-     }
-   };
+  const handleScrollToOptions = () => {
+    // ใช้ scrollIntoView เพื่อเลื่อนหน้าไปยัง OptionCard
+    if (optionCardRef.current) {
+      optionCardRef.current.scrollIntoView({
+        behavior: "smooth", // ใช้การเลื่อนที่ราบรื่น
+        block: "start", // เลื่อนไปที่เริ่มต้นของ div
+      });
+    }
+  };
   return (
     <div style={{ backgroundColor: "white", minHeight: "100vh" }}>
       <Header />
