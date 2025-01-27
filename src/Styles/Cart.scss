@@ -1,19 +1,171 @@
 * {
-    box-sizing: border-box;
-    padding: 0;
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.cart {
-    padding-left: 20px;
-    padding-right: 20px;
-    overflow: hidden;
-    padding-top: 15vh;
+
+.cart_wrapper {
     display: flex;
-    margin: 0 auto;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    background-color: #FFFFFF;
-    min-height: 1200px;
-    min-width: 375px;
+    padding-top: 15vh;
+    padding-bottom: 10vh;
+    background-color: #ffffff;
+    color: #000000;
+
+    .cart_container {
+        width: 1250px;
+        min-height: 1100px;
+        min-width: 375px;
+
+        .cart_header {
+            font-size: 48px;
+            font-weight: 600;
+        }
+
+        .cart_content {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            column-gap: 40px;
+
+            .cart_total {
+                width: 30%;
+                border: #ffffff solid 1px;
+                padding: 20px;
+            }
+
+            .cart_hero {
+                width: 70%;
+                border: #000000 solid 1px;
+
+                .cart_shop_item {
+
+                    table {
+                        width: 100%;
+                        border-collapse: collapse;
+
+                        .cart_head_table {
+                            display: flex;
+                            justify-content: space-between;
+                            border-bottom: 1px solid #000000;
+                            padding: 10px 20px;
+
+                            input[type="checkbox"] {
+                                transform: scale(1.5);
+                            }
+
+                            span {
+                                margin-left: 10px;
+                            }
+                        }
+
+                        .cart_shop_item_content {
+                            border: #ffffff solid 1px;
+                            display: grid;
+                            grid-template-columns: 1.1fr 2.9fr;
+                            padding: 15px;
+                            column-gap: 20px;
+
+                            .cart_shop_item_img {
+                                border: green solid 1px;
+                                display: flex;
+                                column-gap: 10px;
+
+                                input[type="checkbox"] {
+                                    transform: scale(1.5);
+                                }
+
+                                img {
+                                    width: 100%;
+                                    height: 100%;
+                                    object-fit: cover;
+                                }
+                            }
+
+                            .cart_shop_item_detail {
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: space-between;
+                                border: royalblue solid 1px;
+
+
+
+                                .cart_shop_item_name_cross {
+                                    display: flex;
+                                    justify-content: space-between;
+                                    align-items: center;
+
+                                    p {
+                                        font-size: 20px;
+                                        font-weight: 600;
+                                    }
+
+                                    button {
+                                        border: none;
+                                        font-size: medium;
+                                        width: 30px;
+                                        height: 30px;
+                                        background-color: #FFFFFF;
+                                        cursor: pointer;
+
+                                        color: #000000;
+                                        opacity: .5;
+
+                                        &:hover {
+                                            color: #0077B6;
+                                        }
+                                    }
+                                }
+
+                                .cart_shop_item_price {
+                                    font-size: 18px;
+                                    font-weight: 600;
+                                }
+
+                                label {
+                                    p {
+                                        font-size: 18px;
+                                        font-weight: 400;
+                                    }
+                                }
+
+                                .cart_shop_item_qty {
+                                    display: flex;
+                                    align-items: center; // จัดให้ตรงกลาง
+                                    column-gap: 10px;
+                                    margin-top: 10px;
+
+                                    button {
+                                        font-size: 18px;
+                                        border-radius: 5px;
+                                        background-color: #FFFFFF;
+                                        text-decoration: none;
+                                        padding: 1px 7px;
+                                        border: 2px solid #000000;
+
+                                        &:hover {
+                                            border: 2px solid #0077B6;
+                                            color: #0077B6;
+                                        }
+                                    }
+
+                                    input {
+                                        width: 50px;
+                                        height: 30px;
+                                        border: none;
+                                        text-align: center;
+                                        font-size: 18px;
+                                        background-color: #FFFFFF;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
