@@ -1,0 +1,166 @@
+.result-container {
+    // text-align: center;
+    position: relative;
+    padding-top: 180px;
+    padding-bottom: 190px;
+  }
+  
+  .result-header {
+    font-size: 50px;
+    margin-bottom: 60px;
+    color: white;
+    text-align: center;
+  }
+  
+  .result-image-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .result-img {
+    width: 100vw;
+    height: auto;
+    display: block;
+  }
+  
+  .result-box {
+    position: absolute;
+    top: 40px;
+    left: 40px; /* ให้กล่องอยู่ที่ซ้ายสุดของจอ */
+    width: 460px; /* กำหนดความกว้างเริ่มต้น */
+    max-width: 90vw; /* ความกว้างสูงสุดไม่เกิน 90% ของหน้าจอ */
+    min-width: 300px; /* กำหนดความกว้างขั้นต่ำ */
+    background: rgba(255, 255, 255, 0.8); /* พื้นหลังโปร่งแสง */
+    backdrop-filter: blur(5px); /* เอฟเฟกต์เบลอ */
+    border-radius: 16px; /* มุมโค้งมน */
+    padding: 60px;
+    color: black; /* ข้อความเป็นสีดำ */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* เพิ่มเงา */
+
+    @media (max-width: 900px) {
+        position: fixed; /* ใช้ fixed เพื่อให้กล่องอยู่ตรงกลางหน้าจอ */
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); /* ใช้ translate เพื่อจัดตรงกลางทั้งแนวนอนและแนวตั้ง */
+        width: 0%; /* ให้กล่องใช้พื้นที่หน้าจอ 90% */
+        max-width: 500px; /* กำหนดความกว้างสูงสุด */
+        background: rgba(255, 255, 255, 0.9);
+        align-items: center;
+    }
+  }
+  
+  .result-character {
+    font-size: 40px;
+    font-weight: bold;
+    text-align: left;
+  }
+  
+  .result-text {
+    font-size: 14px;
+    text-align: left;
+    margin-bottom: 10;
+  }
+  
+  .result-button {
+    position: absolute; /* วางปุ่มซ้อนทับ */
+    top: 40px; /* ระยะห่างจากด้านบนของภาพ */
+    right: 40px; /* ระยะห่างจากด้านขวาของภาพ */
+    color: #fff; /* สีข้อความปุ่ม */
+    font-size: 16px;
+    background-color: black;
+    font-weight: 400;
+    padding: 10px 20px;
+    border: 1px solid white;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* เงา */
+    transition: all 0.3s ease;
+  }
+  
+  /* สำหรับหน้าจอขนาดเล็ก (ไม่เกิน 900px) */
+  @media (max-width: 900px) {
+    .result-button {
+      top: auto; /* ยกเลิกตำแหน่ง top */
+    //   bottom: 20px; 
+      width: 43vw;
+      font-size: 14px; /* ลดขนาดข้อความในปุ่ม */
+      margin-left: 60;
+      left: 0; /* ให้ปุ่มอยู่ทางซ้ายสุด */
+      bottom: 0; /* ปุ่มอยู่ด้านล่างของภาพ */
+    }
+  }
+  
+  
+  .result-button:hover {
+    background-color: #666666; /* สีปุ่มเมื่อ hover */
+  }
+  
+  /* Media query สำหรับหน้าจอเล็ก */
+  @media (max-width: 900px) {
+    .result-box {
+      position: relative; 
+      top: auto; 
+      left: 0; 
+      transform: translateX(0) translateY(0); 
+      width: 100%; 
+      margin-top: 20px;
+      background: transparent; 
+      backdrop-filter: none; 
+      color: white;
+    }
+  }
+
+  .tryagain {
+    top: 40px; /* ระยะห่างจากด้านล่างของภาพ */
+    right: 40px; /* ระยะห่างจากด้านขวาของภาพ */
+    color: black; /* สีข้อความปุ่ม */
+    font-size: 16px;
+    width: 48%;
+    margin-right: 12;
+    background-color: white;
+    font-weight: 400;
+    padding: 10px 20px;
+    border: 1px solid black;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* เงา */
+    transition: all 0.3s ease;
+
+    @media (max-width: 500px) {
+        width: 100%;
+        margin-bottom: 10;
+    }
+  }
+
+  .tryagain:hover {
+    background-color: #ADE8F4; /* สีปุ่มเมื่อ hover */
+    color: black; /* เปลี่ยนสีข้อความเมื่อ hover */
+    transform: scale(1.02); 
+}
+
+  .go-shop {
+    top: 40px; /* ระยะห่างจากด้านล่างของภาพ */
+    right: 40px; /* ระยะห่างจากด้านขวาของภาพ */
+    color: #fff; /* สีข้อความปุ่ม */
+    font-size: 16px;
+    width: 48%;
+    background-color: #0077B6;
+    font-weight: 400;
+    padding: 10px 20px;
+    border: 0;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* เงา */
+    transition: all 0.3s ease;
+
+    @media (max-width: 500px) {
+        width: 100%;
+    }
+}
+
+.go-shop:hover {
+    background-color: #023E8A; /* สีปุ่มเมื่อ hover */
+    color: white; /* เปลี่ยนสีข้อความเมื่อ hover */
+    transform: scale(1.02); 
+}
+  

@@ -22,8 +22,10 @@ $hover-color: #0096c7; // กำหนดสีสำหรับเมื่อ
   .nav-links {
     list-style: none;
     display: flex;
-    gap: 40px;
+    gap: 0px;
     font-size: 1vw;
+    align-items: center;
+    
 
     @media (max-width: 1300px) {
       display: none; // ซ่อนเมนูหลักในมือถือ
@@ -36,6 +38,7 @@ $hover-color: #0096c7; // กำหนดสีสำหรับเมื่อ
     font-weight: 500;
     font-size: 15px;
     transition: color 0.3s ease;
+    
   }
 
   .nav-links a:hover {
@@ -84,7 +87,6 @@ $hover-color: #0096c7; // กำหนดสีสำหรับเมื่อ
     font-size: 16px;
 
     a {
-      text-align: left;
       display: block;
       color: black;
       text-decoration: none;
@@ -213,4 +215,25 @@ $hover-color: #0096c7; // กำหนดสีสำหรับเมื่อ
   width: 14px;
   pointer-events: none;
 
+}
+
+
+// dropdown จากการ hover Art toy
+.dropdown-content {
+  display: block; /* ให้ dropdown แสดงเสมอ */
+  position: absolute;
+  top: 100%;
+  left:0;
+  background-color: white;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 250px;
+  padding-right: 250px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  width: 100vw;
+}
+
+.art-toy-dropdown { 
+  // position: relative;
 }
