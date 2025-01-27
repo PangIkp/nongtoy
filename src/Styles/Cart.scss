@@ -23,6 +23,7 @@
         .cart_header {
             font-size: 48px;
             font-weight: 600;
+            margin-bottom: 40px;
         }
 
         .cart_content {
@@ -30,6 +31,8 @@
             justify-content: space-between;
             align-items: start;
             column-gap: 40px;
+
+            row-gap: 100px;
 
             .cart_total {
                 width: 30%;
@@ -99,7 +102,7 @@
                                     align-items: center;
 
                                     p {
-                                        font-size: 20px;
+                                        font-size: 16px;
                                         font-weight: 600;
                                     }
 
@@ -121,13 +124,13 @@
                                 }
 
                                 .cart_shop_item_price {
-                                    font-size: 18px;
+                                    font-size: 14px;
                                     font-weight: 600;
                                 }
 
                                 label {
                                     p {
-                                        font-size: 18px;
+                                        font-size: 14px;
                                         font-weight: 400;
                                     }
                                 }
