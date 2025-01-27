@@ -1,7 +1,6 @@
 import React from 'react'
 import '../Styles/Product.scss'
 import ProductCard from "@/components/ProductCard";
-import 'react-photo-view/dist/react-photo-view.css';
 
 function Product() {
     return (
@@ -51,7 +50,7 @@ function Product() {
                         <div className='product_infoText_size'>
                             <p className='size_text'>Size</p>
                             <div className='size_controls'>
-                                <button>Blind Box</button>
+                                <button >Blind Box</button>
                                 <button>Box set</button>
                             </div>
                         </div>
