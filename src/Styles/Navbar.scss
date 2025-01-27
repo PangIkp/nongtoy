@@ -237,3 +237,9 @@ $hover-color: #0096c7; // กำหนดสีสำหรับเมื่อ
 .art-toy-dropdown { 
   // position: relative;
 }
+
+a img {
+  display: block; /* ทำให้ภาพเป็น block-level element เพื่อไม่ให้มีช่องว่างใต้ภาพ */
+  margin: 0; /* ลบ margin ของภาพ */
+  padding: 0; /* ลบ padding ของภาพ */
+}

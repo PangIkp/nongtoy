@@ -62,6 +62,14 @@
   }
 }
 
+.filter-checkbox {
+  cursor: pointer; /* เปลี่ยน cursor เมื่อวางเมาส์บน checkbox */
+}
+
+label {
+  cursor: pointer; /* เปลี่ยน cursor เมื่อวางเมาส์บนข้อความของ label */
+}
+
 /* ปุ่มตัวกรองเมื่อหน้าจอเล็กกว่า 830px */
 .filter-popup {
   position: fixed; /* ทำให้ฟิลเตอร์แสดงใน pop-up */

@@ -154,7 +154,7 @@ const ProductFilter = () => {
                   <input
                     type="checkbox"
                     className="filter-checkbox"
-                    value="Hirono"
+                    value="Hirono"  
                   />{" "}
                   Hirono
                 </label>
