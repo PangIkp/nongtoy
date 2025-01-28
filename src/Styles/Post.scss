@@ -1,0 +1,151 @@
+.image-gallery {
+  width: 100%;
+  margin: auto;
+}
+
+.thumbnail {
+  width: 100%; /* ให้ภาพขยายเต็มความกว้างของ container */
+  height: 320px; /* กำหนดความสูงของภาพ */
+  object-fit: cover; /* ครอบภาพให้เต็มพื้นที่โดยไม่บิดเบี้ยว */
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+/* สไตล์ Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  position: relative;
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+.full-image {
+  max-width: 40vw;
+  // max-height: 60vh;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: white;
+  border: none;
+  font-size: 10px;
+  padding: 5px 8px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+// รายละเอียดของโพสต์
+
+.post-details {
+  .post-header {
+    display: flex; /* ใช้ Flexbox */
+    justify-content: space-between; /* กระจายเนื้อหาภายในให้ซ้ายและขวา */
+    margin-top: 10px;
+    align-items: center; /* จัดให้รายการในแนวแกน Y อยู่ตรงกลาง */
+
+    .post-name {
+      display: flex;
+      font-size: 16px;
+      font-weight: 500;
+      padding: 8;
+      color: black;
+      padding-left: 5px;
+      flex-grow: 1;
+      align-items: center;
+    }
+
+    .heart {
+      width: 18px; /* กำหนดขนาดรูปหัวใจ */
+      height: 16px;
+      cursor: pointer;
+      margin-right: 5px; /* เพิ่มช่องว่างระหว่างหัวใจกับข้อความ like */
+    }
+
+    .SelectHert {
+      width: 20px; /* กำหนดขนาดรูปหัวใจ */
+      height: 17px;
+      cursor: pointer; /* เปลี่ยนเคอร์เซอร์เมื่อวางเมาส์ */
+      margin-right: 5px; /* เพิ่มช่องว่างระหว่างหัวใจกับข้อความ like */
+    }
+
+    .like {
+      color: black;
+      font-size: 16px; /* กำหนดขนาดตัวอักษรของ like */
+    }
+  }
+
+  .post-province {
+    font-size: 14px;
+    font-weight: 300;
+    color: #9f9f9f;
+  }
+
+  .post-price {
+    font-size: 16px;
+    font-weight: 600;
+    color: black;
+    padding-left: 5px;
+  }
+
+  .layout {
+    display: flex;
+    justify-content: space-between; /* จัดข้อความให้ชิดซ้ายและขวา */
+    align-items: center; /* จัดให้อยู่กึ่งกลางในแนวแกน Y */
+    margin-bottom: 8px;
+  }
+
+  .post-province-layout {
+    display: flex;
+    align-items: center;
+    gap: 3px; /* ระยะห่างระหว่างรูปภาพกับข้อความ */
+  }
+
+  .Position {
+    width: 13; /* ปรับขนาดของรูปภาพ */
+    object-fit: contain; /* ทำให้รูปภาพไม่เสียสัดส่วน */
+  }
+
+  .details {
+    color: black;
+    font-size: 14;
+    padding: 5;
+    margin-top: 40;
+  }
+
+  .condition {
+    color: black;
+    text-align: center;
+    margin-top: 20;
+    width: 65;
+    font-size: 14; /* เพิ่ม px เพื่อให้ตัวเลขเป็นหน่วยที่ถูกต้อง */
+    border-radius: 20;
+    border: 1 solid black; /* กำหนดกรอบเป็นเส้นทึบ ขนาด 2px และสีดำ */
+    padding: 5; /* เพิ่มช่องว่างภายในกรอบ */
+  }
+
+  .horizontal-line {
+    width: 100%;
+    height: 1px;
+    background-color: #9f9f9f; /* สีเทา */
+    margin-top: 60px;
+    margin-bottom: 20px;
+  }
+}

@@ -22,33 +22,35 @@ const PostCard: React.FC<PostCardProps> = ({
 
   return (
     <div className="post-card">
-      <div className="post-card_image">
-        <img src={postImage} alt={postName} />
-      </div>
-      <div className="post-card_details">
-        <div className="post-card_header">
-          <h2 className="post-card_name">{postName}</h2>
-          {/* รูปหัวใจ */}
-          <img
-            src={isLiked ? "/Images/SelectHert.png" : "/Images/heart.png"} // เปลี่ยนรูปตามสถานะ
-            alt={isLiked ? "Liked" : "Not Liked"}
-            className={isLiked ? "SelectHert" : "heart"}
-            onClick={handleHeartClick} // เพิ่มการคลิก
-          />
+      <a href="/post">
+        <div className="post-card_image">
+          <img src={postImage} alt={postName} />
         </div>
-
-        <div className="layout">
-          <p className="post-card_price">{postPrice}</p>
-          <div className="post-card_province-layout">
+        <div className="post-card_details">
+          <div className="post-card_header">
+            <h2 className="post-card_name">{postName}</h2>
+            {/* รูปหัวใจ */}
             <img
-              src="/Images/Position.png"
-              alt="Position"
-              className="Position"
+              src={isLiked ? "/Images/SelectHert.png" : "/Images/heart.png"} // เปลี่ยนรูปตามสถานะ
+              alt={isLiked ? "Liked" : "Not Liked"}
+              className={isLiked ? "SelectHert" : "heart"}
+              onClick={handleHeartClick} // เพิ่มการคลิก
             />
-            <p className="post-card_province">{postProvince}</p>
+          </div>
+
+          <div className="layout">
+            <p className="post-card_price">{postPrice}</p>
+            <div className="post-card_province-layout">
+              <img
+                src="/Images/Position.png"
+                alt="Position"
+                className="Position"
+              />
+              <p className="post-card_province">{postProvince}</p>
+            </div>
           </div>
         </div>
-      </div>
+      </a>
     </div>
   );
 };

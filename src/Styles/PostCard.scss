@@ -81,9 +81,17 @@
   display: flex;
   flex-direction: column;
   width: 100%; /* ให้การ์ดใช้พื้นที่เต็มของคอลัมน์ */
-  height: 90%; /* ปรับความสูงของการ์ดตามเนื้อหาภายใน */
+  height: 100%; /* ปรับความสูงของการ์ดตามเนื้อหาภายใน */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
+
+  a {
+    color: black;
+    font-size: 16px;
+    font-weight: 400;
+    text-decoration: none;
+    cursor: pointer;
+  }
 }
 
 .post-card_image {
@@ -139,16 +147,6 @@
     font-size: 12px;
     font-weight: 300;
     color: #9F9F9F;
-  }
-
-  .post-card_qty {
-    background-color: #eed00f;
-    color: black;
-    padding: 1px 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    font-weight: 400;
-    font-size: 11px;
   }
 
   .post-card_price {
