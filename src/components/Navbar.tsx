@@ -110,12 +110,12 @@ const Navbar: React.FC = () => {
 
       <div className="container">
 
-        <a>
-        <img src="/Images/Favorite.png" alt="Favorite" className="Favorite" />
+        <a href="/favorite">
+          <img src="/Images/Favorite.png" alt="Favorite" className="Favorite" />
         </a>
 
         <a href="/cart">
-        <img src="/Images/Cart.png" alt="Cart" className="Cart" />
+          <img src="/Images/Cart.png" alt="Cart" className="Cart" />
         </a>
         <Link href="/login">
           <p className="gradient-button">Login</p>
