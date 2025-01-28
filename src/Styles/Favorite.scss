@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.flex_jus_between {
+    display: flex;
+    justify-content: space-between;
+}
+
+.border_bottom {
+    border-bottom: 1px solid #d1d1d1;
+}
+
+.favorite_wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 15vh;
+    padding-bottom: 5vh;
+    background-color: #ffffff;
+    color: #000000;
+
+    .favorite_container {
+        max-width: 1250px;
+        min-height: 1100px;
+        min-width: 375px;
+        padding: 0 10px;
+
+        .favorite_text_tatal_product {
+            font-size: 16px;
+            font-weight: 600;
+            text-align: right;
+            margin-top: 40px;
+            padding-bottom: 5px;
+        }
+
+        .favorite_main_content {
+            display: flex;
+            flex-direction: column;
+
+            .favorite_content_product {
+                display: flex;
+                padding: 20px 10px;
+                column-gap: 20px;
+
+                .favorite_content_product_img {
+                    width: 15%;
+                    background-color: #ffffff;
+                    border-radius: 10px;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 10px;
+                        object-fit: cover;
+                    }
+                }
+
+                .favorite_content_product_detail {
+                    width: 85%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+
+                    .favorite_content_product_name {
+                        font-size: 16px;
+                        font-weight: 600;
+
+                        .favorite_content_product_size {
+                            display: block;
+                            font-size: 12px;
+                            color: #666666;
+                        }
+                    }
+
+                    .favorite_content_product_price {
+                        font-size: 16px;
+                        font-weight: 600;
+                    }
+
+                    .favorite_content_product_remove_btn {
+                        padding: 5px 10px;
+                        font-size: 14px;
+                        background-color: #ffffff;
+                        font-weight: 600;
+                        width: fit-content;
+                        height: fit-content;
+                        border: none;
+                        text-decoration: underline;
+                        cursor: pointer;
+
+                        &:hover {
+                            color: #0096C7;
+                            border: #0096C7 solid .5px;
+                            border-radius: 10px;
+
+
+                        }
+                    }
+
+                }
+
+            }
+        }
+
+        .favorite_header {
+            display: flex;
+            justify-content: space-between;
+
+            .favorite_header_text {
+                font-size: 40px;
+                font-weight: 600;
+            }
+
+            .favorite_header_btn {
+                display: flex;
+                align-items: center;
+                column-gap: 10px;
+
+                button {
+                    border: #000000 solid .5px;
+                    width: 115px;
+                    height: 40px;
+                    font-size: 16px;
+                    font-weight: bold;
+                    border-radius: 50px;
+                    cursor: pointer;
+                }
+
+                .favorite_header_btn_product {
+                    background-color: #0096C7;
+                    color: #ffffff;
+
+                    &:hover {
+                        background-color: #000000;
+                    }
+                }
+
+                .favorite_header_btn_post {
+                    background-color: #ffffff;
+                    color: #000000;
+
+                    &:hover {
+                        background-color: #000000;
+                        color: #ffffff;
+                    }
+                }
+            }
+        }
+
+
+    }
+}

@@ -73,7 +73,6 @@ function ProductDetail() {
                         </div>
                     </div>
 
-
                 </section>
                 <section className='product_history'>
                     <div className='product_history_container'>

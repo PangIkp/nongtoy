@@ -5,7 +5,7 @@ import Footer from '@/components/Footer'
 import ProductDetail from '@/components/ProductDetail'
 import Copyrights from '@/components/Copyrights'
 
-function Product() {
+function product() {
     return (
         <div>
             <Header />
@@ -17,4 +17,4 @@ function Product() {
     );
 }
 
-export default Product
+export default product
