@@ -5,14 +5,17 @@ const CartItem = () => {
   return (
     <div className="cart_wrapper">
       <div className='cart_container'>
-        <p className="cart_header">
-          Cart
-        </p>
-        <section className='cart_content'>
-          <div className='contatiner'>
-            <div className='cart_hero'>
-              <div className='cart_shop_item'>
-                <form action="">
+
+        <form action="">
+          <div className="cart_header">
+            <p>
+              Cart
+            </p>
+          </div>
+          <section className='cart_content'>
+            <div className='contatiner'>
+              <div className='cart_hero'>
+                <div className='cart_shop_item'>
                   <table>
                     <thead >
                       <tr>
@@ -85,13 +88,11 @@ const CartItem = () => {
                       </tr>
                     </tbody>
                   </table>
-                </form>
-              </div>
+                </div>
 
-            </div>
-            <div className='cart_hero'>
-              <div className='cart_shop_item'>
-                <form action="">
+              </div>
+              <div className='cart_hero'>
+                <div className='cart_shop_item'>
                   <table>
                     <thead>
                       <tr>
@@ -140,63 +141,63 @@ const CartItem = () => {
                       </tr>
                     </tbody>
                   </table>
-                </form>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div className='cart_total'>
-            <table>
-              <thead>
-                <tr>
-                  <th className='left'>
-                    <p className='cart_total_title'>Total</p>
-                  </th>
-                  <th className='right'>
-                    <p className='cart_total_title'>THB 1,079</p>
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td className='left'>
-                    <p className='cart_total_item'>HIRONO Reshape Series Figures</p>
-                  </td>
-                  <td className='right'>
-                    <p className='cart_total_item'>380 Baht</p>
-                  </td>
-                </tr>
-                <tr>
-                  <td className='left'>
-                    <p className='cart_total_item'>Mega space Moolly 100% Series 2</p>
-                  </td>
-                  <td className='right'>
-                    <p className='cart_total_item'>690 Baht</p>
-                  </td>
-                </tr>
-                <tr className='border_bottom'>
-                  <td className='left'>
-                    <p className='cart_total_item'>Tax</p>
-                  </td>
-                  <td className='right'>
-                    <p className='cart_total_item'>-</p>
-                  </td>
-                </tr>
-              </tbody>
-              <tfoot>
-                <tr className='border_bottom'>
-                  <td className='left'>
-                    <p className='cart_total_sub'>Subtotal</p>
-                  </td>
-                  <td className='right'>
-                    <p className='cart_total_sub'>1,070 Baht</p>
-                  </td>
-                </tr>
-              </tfoot>
-            </table>
-            <button className='cart_checkout'>CHECKOUT</button>
-          </div>
-        </section>
+            <div className='cart_total'>
+              <table>
+                <thead>
+                  <tr>
+                    <th className='left'>
+                      <p className='cart_total_title'>Total</p>
+                    </th>
+                    <th className='right'>
+                      <p className='cart_total_title'>1,070 ฿</p>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td className='left'>
+                      <p className='cart_total_item'>HIRONO Reshape Series Figures</p>
+                    </td>
+                    <td className='right'>
+                      <p className='cart_total_item'>380 ฿</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className='left'>
+                      <p className='cart_total_item'>Mega space Moolly 100% Series 2</p>
+                    </td>
+                    <td className='right'>
+                      <p className='cart_total_item'>690 ฿</p>
+                    </td>
+                  </tr>
+                  <tr className='border_bottom'>
+                    <td className='left'>
+                      <p className='cart_total_item'>Tax</p>
+                    </td>
+                    <td className='right'>
+                      <p className='cart_total_item'>-</p>
+                    </td>
+                  </tr>
+                </tbody>
+                <tfoot>
+                  <tr className='border_bottom'>
+                    <td className='left'>
+                      <p className='cart_total_sub'>Subtotal</p>
+                    </td>
+                    <td className='right'>
+                      <p className='cart_total_sub'>1,070 ฿</p>
+                    </td>
+                  </tr>
+                </tfoot>
+              </table>
+              <button className='cart_checkout'>CHECKOUT</button>
+            </div>
+          </section>
+        </form>
 
       </div>
 
