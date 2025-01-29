@@ -50,7 +50,7 @@ function ProductDetail() {
                         <div className='product_infoText_size'>
                             <p className='size_text'>Size</p>
                             <div className='size_controls'>
-                                <button>Blind Box</button>
+                                <button >Blind Box</button>
                                 <button>Box set</button>
                             </div>
                         </div>
@@ -72,7 +72,6 @@ function ProductDetail() {
                             <button className='buy_button'>Buy</button>
                         </div>
                     </div>
-
 
                 </section>
                 <section className='product_history'>
