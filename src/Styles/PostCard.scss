@@ -100,6 +100,7 @@
   height: auto; /* ปรับความสูงให้สอดคล้องกับสัดส่วน */
   overflow: hidden;
   border-radius: 12px;
+  text-decoration: none;
   position: relative;
 }
 
@@ -107,12 +108,13 @@
   width: 100%; /* ให้ภาพใช้พื้นที่เต็มของการ์ด */
   height: auto; /* ความสูงของภาพจะปรับตามสัดส่วน */
   object-fit: cover; /* ให้ภาพครอบคลุมพื้นที่ */
+  border-radius: 12px;
   transition: transform 0.3s ease;
 }
 
-.post-card_image:hover img {
-  transform: scale(1.1); /* ขยายภาพเมื่อ hover */
-}
+// .post-card_image:hover img {
+//   transform: scale(1.05);
+// }
 
 
 .post-card_details {
@@ -173,5 +175,11 @@
   .Position {
     width: 10; /* ปรับขนาดของรูปภาพ */
     object-fit: contain; /* ทำให้รูปภาพไม่เสียสัดส่วน */
+  }
+
+  .edit-btn {
+    font-size: 13;
+    font-weight: 200;
+    text-decoration: underline;
   }
 }

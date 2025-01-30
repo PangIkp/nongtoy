@@ -2,7 +2,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import "../Styles/CreatePost.scss";
 
-const Create: React.FC = () => {
+const Post: React.FC = () => {
   const [selectedImages, setSelectedImages] = useState<File[]>([]);
   const [productName, setProductName] = useState("");
   const [details, setDetails] = useState("");
@@ -61,7 +61,7 @@ const Create: React.FC = () => {
   return (
     <div className="create-post">
       <h2>
-        Create Post
+        Post
         <button className="close-post" onClick={handleTogglePost}>
           {isPostClosed ? "Open post" : "Close post"}
         </button>
@@ -278,4 +278,4 @@ const Create: React.FC = () => {
   );
 };
 
-export default Create;
+export default Post;

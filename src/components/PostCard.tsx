@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import "../Styles/PostCard.scss"; // ต้องแน่ใจว่า SCSS นี้ถูกนำเข้าแล้ว
+import "../Styles/PostCard.scss";
 
 interface PostCardProps {
   postName: string;
   postPrice: string;
   postImage: string;
   postProvince: string;
+  isProfilePage?: boolean;
 }
 
 const PostCard: React.FC<PostCardProps> = ({
@@ -13,6 +14,7 @@ const PostCard: React.FC<PostCardProps> = ({
   postPrice,
   postImage,
   postProvince,
+  isProfilePage = false,
 }) => {
   const [isLiked, setIsLiked] = useState(false); // State สำหรับสถานะหัวใจ
 
@@ -22,10 +24,10 @@ const PostCard: React.FC<PostCardProps> = ({
 
   return (
     <div className="post-card">
-      <a href="/post">
-        <div className="post-card_image">
+      <div>
+        <a href="/post" className="post-card_image">
           <img src={postImage} alt={postName} />
-        </div>
+        </a>
         <div className="post-card_details">
           <div className="post-card_header">
             <h2 className="post-card_name">{postName}</h2>
@@ -41,16 +43,25 @@ const PostCard: React.FC<PostCardProps> = ({
           <div className="layout">
             <p className="post-card_price">{postPrice}</p>
             <div className="post-card_province-layout">
-              <img
-                src="/Images/Position.png"
-                alt="Position"
-                className="Position"
-              />
-              <p className="post-card_province">{postProvince}</p>
+              {/* ซ่อนรูป Position เมื่ออยู่ในหน้า Profile */}
+              {!isProfilePage && (
+                <img
+                  src="/Images/Position.png"
+                  alt="Position"
+                  className="Position"
+                />
+              )}
+
+              {/* แสดงข้อความ Province หรือปุ่ม Edit เมื่ออยู่ในหน้า Profile */}
+              {isProfilePage ? (
+                <a href="/postmanage" className="edit-btn">Edit</a> // แสดงปุ่ม Edit ในหน้า Profile
+              ) : (
+                <p className="post-card_province">{postProvince}</p>
+              )}
             </div>
           </div>
         </div>
-      </a>
+      </div>
     </div>
   );
 };

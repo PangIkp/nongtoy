@@ -1,0 +1,60 @@
+// การ sort และ ปุ่ม
+.sort-post {
+  display: flex;
+  align-items: center;
+  margin-top: 20;
+  padding: 10;
+  justify-content: space-between;
+
+  .sort {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: space-between;
+
+    label {
+      font-weight: 500;
+      font-size: 14;
+      color: black;
+    }
+
+    select {
+      padding: 5px 10px;
+      width: 120;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      cursor: pointer;
+    }
+  }
+
+  .post-btn {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    gap: 4px;
+    background-color: #0077B6;
+    color: white;
+    border: none;
+    padding: 6px 15px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 14px;
+    text-decoration: none;
+  
+    /* ให้ปุ่มอยู่ชิดขวา */
+    margin-left: auto;
+
+    &:hover {
+      background-color: #005D8D;
+    }
+
+    .icon-container {
+      display: flex;
+      align-items: center;
+    }
+
+    .post-icon {
+      width: 20px; /* ขนาดของไอคอน */
+    }
+  }
+}

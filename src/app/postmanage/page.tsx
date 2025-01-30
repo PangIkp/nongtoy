@@ -3,9 +3,9 @@ import Navbar from "@/components/Navbar";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Copyrights from "@/components/Copyrights";
-import Create from "@/components/Create";
+import Create from "@/components/Post";
 
-function CreatePost() {
+function Postmanage() {
   return (
     <div
       style={{ backgroundColor: "white", minHeight: "100vh", width: "100vw" }}>
@@ -30,4 +30,4 @@ function CreatePost() {
   );
 }
 
-export default CreatePost;
+export default Postmanage;

@@ -4,7 +4,7 @@ import "../Styles/Profile.scss";
 const Profile = () => {
   return (
     <div className="profile-container">
-      <div className="profile-info">
+      <a href="/profile" className="profile-info">
         <div className="profile-avatar">
           <img src="/Images/Profile.png" alt="User" />
         </div>
@@ -12,7 +12,8 @@ const Profile = () => {
           <h3>Veronica</h3>
           <p>200 posts</p>
         </div>
-      </div>
+      </a>
+
       <div className="profile-actions">
         <button className="btn">
           <img src="/Images/Mail.png" alt="Email" className="icon" />
