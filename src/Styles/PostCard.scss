@@ -14,21 +14,22 @@
     background: linear-gradient(45deg, #023e8a, #0077b6);
     color: white;
     border: none;
-    padding: 1vw 2vw; /* ใช้หน่วย vw เพื่อให้สัมพันธ์กับความกว้างหน้าจอ */
+    padding: 1vw 2vw; 
     text-align: center;
     border-radius: 100px;
     font-weight: bold;
     cursor: pointer;
-    font-size: 20px; /* ขนาดฟอนต์สัมพันธ์กับความกว้างหน้าจอ */
+    font-size: 20px; 
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
-    transition: transform 0.3s ease, background 0.3s ease; /* เพิ่มการเปลี่ยนแปลงของ transform และ background อย่างนุ่มนวล */
+    transition: transform 0.3s ease, background 0.3s ease;
+    text-decoration: none;
   
     &:hover {
       background: linear-gradient(45deg, #0077b6, #023e8a);
-      transform: scale(1.1); /* ขยายขนาดปุ่มขึ้น 10% เมื่อ hover */
+      transform: scale(1.1); 
     }
   }
   
