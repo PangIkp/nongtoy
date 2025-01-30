@@ -17,19 +17,22 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: 15vh;
-    padding-bottom: 5vh;
+    padding-top: 150px;
+    padding-bottom: 50px;
     background-color: #ffffff;
     color: #000000;
+
 
     .account_container {
         width: 100%;
         max-width: 1100px;
-        min-height: 1100px;
+        min-height: 1000px;
         min-width: 375px;
         padding: 0 10px;
+        place-items: center;
 
         .account_content {
+            width: 100%;
             display: flex;
             column-gap: 40px;
 
@@ -56,7 +59,7 @@
                 }
 
                 .myaccount_text {
-                    font-size: 20px;
+                    font-size: 1.2rem;
                     font-weight: 600;
                 }
 
@@ -68,7 +71,7 @@
                 }
 
                 .myaccount_btn_info {
-                    border: #0096C7 2px solid;
+                    background: #F0FCFF;
                     color: #000000;
                 }
 
@@ -85,9 +88,9 @@
                     align-items: center;
                     width: 100%;
                     padding: 0 20px;
-                    column-gap: 10px;
+                    column-gap: 20px;
                     height: 50px;
-                    font-size: 16px;
+                    font-size: .85rem;
                     font-weight: 600;
                     border: 1px solid #D3D3D3;
                     border-radius: 10px;
@@ -114,7 +117,7 @@
 
                     label {
                         display: block;
-                        font-size: 15px;
+                        font-size: .813rem;
                         font-weight: 600;
                     }
 
@@ -122,7 +125,7 @@
                         width: 100%;
                         height: 40px;
                         padding: 10px;
-                        font-size: 14px;
+                        font-size: .75rem;
                         margin-top: 10px;
                         margin-bottom: 20px;
                         border: 1px solid #D3D3D3;
@@ -137,7 +140,7 @@
                     padding-bottom: 5px;
 
                     .info_header_text {
-                        font-size: 20px;
+                        font-size: 1.25rem;
                         font-weight: 600;
                     }
 
@@ -148,7 +151,7 @@
                         width: fit-content;
                         height: 30px;
                         font-weight: 600;
-                        font-size: 13px;
+                        font-size: 0.75rem;
                         border-radius: 50px;
                         cursor: pointer;
 
@@ -163,7 +166,7 @@
     }
 }
 
-@media screen and (max-width: 755px) {
+@media screen and (max-width: 756px) {
     .account_wrapper {
         padding-top: 10vh;
 
@@ -188,6 +191,7 @@
 
                 .account_content_Info {
                     width: 100%;
+                    padding: 0 20px;
                 }
             }
         }
