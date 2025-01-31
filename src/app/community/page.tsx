@@ -22,7 +22,7 @@ function Community() {
           />
 
           {/* ปุ่มจะอยู่ที่มุมขวาบนของภาพ */}
-          <a href="/createpost" className="community-button">
+          <a href="/postmanage" className="community-button">
             Create Post
             <img
               src="/Images/CreatePost.png"
