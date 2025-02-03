@@ -16,16 +16,19 @@
 .order_container {
   display: flex;
   justify-content: space-between; /* แยกซ้าย-ขวา */
-  //   align-items: flex-start;
   gap: 40px;
 }
 
 .menu_section {
-  width: 40%; /* กำหนดให้ Menu อยู่ด้านซ้าย */
+  width: 60%; /* กำหนดให้ Menu อยู่ด้านซ้าย */
 }
 
 .order_section {
-  width: 70%; /* กำหนดให้ Order อยู่ด้านขวา */
+  width: 100%; /* กำหนดให้ Order อยู่ด้านขวา */
+
+  &.detailpage {
+    width: 100%;
+  }
 }
 
 .order_content {
@@ -151,8 +154,8 @@
 // Order Item
 .order-card {
   background: white;
-  border-radius: 15px;
-  box-shadow: 0.5px 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border: 1px solid #d9d9d9;
   // border: 1 solid;
   box-sizing: border-box;
@@ -238,24 +241,57 @@
 }
 
 .order-footer {
-  display: flex;
-  justify-content: space-between;
-  border-top: 1px solid #ddd;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 45px;
-  padding-right: 45px;
-  font-size: 14;
-  font-weight: 600;
-
-  .see-more {
-    background: none;
-    font-size: 12;
-    border: none;
-    color: #666666;
-    cursor: pointer;
-  }
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #ddd;
+    padding: 10px 45px;
+    font-size: 14px;
+    font-weight: 600;
+    align-items: center;
+  
+    .see-more {
+      background: none;
+      font-size: 11px;
+      border: none;
+      font-weight: 300;
+      color: #666666;
+      cursor: pointer;
+    }
+  
+    /* สไตล์สำหรับหน้า detailpage */
+    &.detailpage {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px; /* ระยะห่างระหว่างแต่ละบรรทัด */
+        width: 100%;
+        font-size: 14px;
+        font-weight: 400;
+    
+        .order-summary {
+          display: flex;
+          flex-direction: column;
+          gap: 4px;
+          width: 100%;
+    
+          span {
+            display: flex;
+            justify-content: space-between;
+          }
+        }
+    
+        /* ปรับ total price ให้ชิดซ้าย-ขวา */
+        .total-price {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 600;
+            font-size: 16px;
+            margin-top: 10px;
+            width: 100%;    
+          }
+    }
 }
+  
+  
 
 @media (max-width: 1000px) {
     .order_container {
@@ -267,3 +303,96 @@
       width: 100%; /* ทำให้แต่ละส่วนเต็มความกว้าง */
     }
 }
+
+
+
+// Order history detail
+.order_history_detail {
+    display: flex;
+    justify-content: center; /* จัดให้อยู่ตรงกลางแนวนอน */
+    align-items: center; /* จัดให้อยู่ตรงกลางแนวตั้ง */
+    gap: 40px;
+}
+
+// order number
+.order-number {
+    margin-bottom: 18;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: black;
+    width: 100%;
+
+    // h3 {
+    //   font-size: 16;
+    // }
+  
+    .order-details {
+    //   display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-left: 45px;
+      padding-right: 45px;
+      padding-top: 8px;
+      padding-bottom: 8px;
+      .label {
+        font-size: 14;
+        display: flex;
+        justify-content: space-between;
+        padding: 2;
+        width: 100%;
+        
+        // span {
+        //   margin-left: auto;
+        // }
+      }
+    }
+  }
+  
+
+// order tracking 
+.order-tracking {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: black;
+    width: 100%;
+    margin: 0 auto; /* ทำให้กล่องอยู่กลาง */
+}
+
+    
+    h3 {
+      padding-left: 45px;
+      padding-right: 45px;
+      padding-top: 8px;
+      padding-bottom: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #ddd;
+    }
+  
+    .tracking-details {
+      .label {
+        font-size: 14px;
+        padding-left: 45px;
+        padding-right: 45px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        // padding: 2;
+        font-weight: 500;
+      }
+      
+      .address, .phone {
+        font-size: 14px;
+        padding-left: 45px;
+        padding-right: 45px;
+        padding-bottom: 8px;
+        border-radius: 4px;
+      }
+    }
+  

@@ -10,7 +10,10 @@ const orders = [
   {
     storeName: "POP MART",
     status: "Delivered",
-    totalPrice: 1500,
+    subtotal: 3000, // ราคาก่อนรวมค่าจัดส่ง
+    shippingFee: 50, // ค่าจัดส่ง
+    shippingDiscount: 20, // ส่วนลดค่าจัดส่ง
+    totalPrice: 3030, // รวมทั้งหมด
     products: [
       {
         image: "/Images/PostHino.png",
@@ -19,7 +22,6 @@ const orders = [
         quantity: 1,
         price: 1500,
       },
-
       {
         image: "/Images/PostHino.png",
         name: "HIRONO Reshape Series Figures",
@@ -32,7 +34,10 @@ const orders = [
   {
     storeName: "Manga World",
     status: "Processing",
-    totalPrice: 3000,
+    subtotal: 3000, // ราคาก่อนรวมค่าจัดส่ง
+    shippingFee: 70, // ค่าจัดส่ง
+    shippingDiscount: 30, // ส่วนลดค่าจัดส่ง
+    totalPrice: 3040, // รวมทั้งหมด
     products: [
       {
         image: "/Images/PostHino.png",
@@ -44,6 +49,7 @@ const orders = [
     ],
   },
 ];
+
 
 function Order() {
     return (

@@ -1,4 +1,6 @@
+"use client";
 import React from "react";
+import { usePathname } from "next/navigation"; // ใช้ของ Next.js
 import "../Styles/OrderItem.scss";
 
 interface Product {
@@ -14,6 +16,9 @@ interface OrderItemProps {
   status: string;
   products: Product[];
   totalPrice: number;
+  subtotal: number;
+  shippingFee: number;
+  shippingDiscount: number;
 }
 
 const OrderItem: React.FC<OrderItemProps> = ({
@@ -21,7 +26,12 @@ const OrderItem: React.FC<OrderItemProps> = ({
   status,
   totalPrice,
   products,
+  subtotal,
+  shippingFee,
+  shippingDiscount,
 }) => {
+  const pathname = usePathname(); // ใช้ของ Next.js
+
   return (
     <div className="order-card">
       <div className="order-header">
@@ -51,11 +61,41 @@ const OrderItem: React.FC<OrderItemProps> = ({
         ))}
       </div>
 
-      <div className="order-footer">
+      <div
+        className={`order-footer ${
+          pathname === "/orderdetail" ? "detailpage" : ""
+        }`}
+      >
+        {/* แสดงเฉพาะในหน้า /orderdetail */}
+        {pathname === "/orderdetail" && (
+          <div className="order-summary">
+            <span className="product-subtotal">
+              Subtotal <span>฿{subtotal.toLocaleString()}</span>
+            </span>
+
+            <span className="product-shippingfee">
+              Shipping Fee <span>฿{shippingFee.toLocaleString()}</span>
+            </span>
+
+            <span className="product-shippingdiscount">
+              Shipping Discount{" "}
+              <span>-฿{shippingDiscount.toLocaleString()}</span>
+            </span>
+          </div>
+        )}
+
+
         <span className="total-price">
-          Total price : {totalPrice.toLocaleString()}
+          <span style={{marginRight:5}}>Total price</span>
+          <span>฿{totalPrice.toLocaleString()}</span>
         </span>
-        <button className="see-more">See more</button>
+        <div />
+        {/* ซ่อนปุ่ม See more ถ้าอยู่ที่ /orderdetail */}
+        {pathname !== "/orderdetail" && (
+          <a href="/orderdetail" className="see-more">
+            See more
+          </a>
+        )}
       </div>
     </div>
   );
