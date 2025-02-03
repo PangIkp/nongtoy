@@ -3,10 +3,11 @@ import Navbar from "@/components/Navbar";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Copyrights from "@/components/Copyrights";
-import Account from "@/components/Account";
-import Menu from "@/components/Menu";
+import Profile from "@/components/Profile";
+import PostDetail from "@/components/PostDetail";
+import Comment from "@/components/Comment";
 
-function account() {
+function post() {
   return (
     <div
       style={{ backgroundColor: "white", minHeight: "100vh", width: "100vw" }}
@@ -18,25 +19,24 @@ function account() {
         style={{
           paddingLeft: "15vw",
           paddingRight: "15vw",
-          paddingTop: "220px",
+          paddingTop: "160px",
           paddingBottom: "10vw",
         }}
       >
-        <div className="order_container">
-          <div className="menu_section">
-            <Menu />
-          </div>
-
-          <div className="order_section">
-            <Account />
-          </div>
-        </div>
+        <Profile />
+        <PostDetail />
+        <p style={{fontSize:"16",color: "black", paddingLeft: 5, marginBottom: 20}}>
+          4 Comments
+        </p>
+        <Comment />
+        <Comment />
+        <Comment />
+        <Comment />
       </div>
-
       <Footer />
       <Copyrights />
     </div>
   );
 }
 
-export default account;
+export default post;

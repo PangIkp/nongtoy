@@ -6,6 +6,7 @@ import "../Styles/PostFilter.scss";
 const PostFilter = () => {
   const [isExpandedRange, setIsExpandedRange] = useState(true);
   const [isExpandedCon, setIsExpandedCon] = useState(true);
+  const [isExpandedDate, setIsExpandedDate] = useState(true);
   const [showFilter, setShowFilter] = useState(false);
 
   const toggleRange = () => {
@@ -16,9 +17,15 @@ const PostFilter = () => {
     setIsExpandedCon((prev) => !prev);
   };
 
+  const toggleDate = () => {
+    setIsExpandedDate((prev) => !prev);
+  };
+
   const toggleFilter = () => {
     setShowFilter(!showFilter); // เปลี่ยนสถานะการแสดงฟิลเตอร์
   };
+
+
 
   return (
     <div
@@ -101,21 +108,21 @@ const PostFilter = () => {
 
         <div className="filter-container">
           {/* Header พร้อมปุ่มเปิด/ปิด */}
-          <div className="filter-header" onClick={toggleRange}>
+          <div className="filter-header" onClick={toggleDate}>
             <h4>Post Date</h4>
             <button className="toggle-button">
-              {isExpandedRange ? "▴" : "▾"}
+              {isExpandedDate ? "▴" : "▾"}
             </button>
           </div>
 
           {/* ตัวเลือกหมวดหมู่ (ซ่อน/แสดง) */}
-          {isExpandedRange && (
+          {isExpandedDate && (
             <div className="filter-options">
               <label>
                 <input
                   type="checkbox"
                   className="filter-checkbox"
-                  value="electronics"
+                  value="Newest"
                 />{" "}
                 Newest
               </label>
@@ -123,7 +130,7 @@ const PostFilter = () => {
                 <input
                   type="checkbox"
                   className="filter-checkbox"
-                  value="clothing"
+                  value="Oldest"
                 />{" "}
                 Oldest
               </label>
@@ -227,28 +234,42 @@ const PostFilter = () => {
         
         <div className="post-container">
           <PostCard
-            postName="HIRONO Reshape Series Figures"
+            postName="HIRONO Reshape"
             postPrice="฿380.00"
             postImage="/Images/PostHino.png"
             postProvince="Bangkok"
           />
 
           <PostCard
-            postName="HIRONO Reshape Series Figures"
+            postName="HIRONO Reshape"
             postPrice="฿380.00"
             postImage="/Images/PostHino.png"
             postProvince="Bangkok"
           />
 
           <PostCard
-            postName="HIRONO Reshape Series Figures"
+            postName="HIRONO Reshape"
             postPrice="฿380.00"
             postImage="/Images/PostHino.png"
             postProvince="Bangkok"
           />
 
           <PostCard
-            postName="HIRONO Reshape Series Figures"
+            postName="HIRONO Reshape"
+            postPrice="฿380.00"
+            postImage="/Images/PostHino.png"
+            postProvince="Bangkok"
+          />
+
+          <PostCard
+            postName="HIRONO Reshape"
+            postPrice="฿380.00"
+            postImage="/Images/PostHino.png"
+            postProvince="Bangkok"
+          />
+
+          <PostCard
+            postName="HIRONO Reshape"
             postPrice="฿380.00"
             postImage="/Images/PostHino.png"
             postProvince="Bangkok"
